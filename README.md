@@ -4,7 +4,6 @@
 
 Corporate website for Ijeoma Intelligence Ltd — a safety intelligence platform providing real-time threat monitoring, emergency response, and journey protection.
 
-🌐 **Live Site:** https://cynthiaugwu.github.io/ijeomaintelligence.ltd/
 
 ## About
 
