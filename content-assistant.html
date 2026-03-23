@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ijeoma Intelligence is hiring a Content & Media Assistant to own our social media presence across LinkedIn, Twitter/X, and TikTok.">
+    <title>Content &amp; Media Assistant | Careers | Ijeoma Intelligence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='28' fill='%230f172a'/><circle cx='64' cy='36' r='22' fill='none' stroke='%23c8a44e' stroke-width='5' opacity='0.5'/><circle cx='64' cy='36' r='16' fill='none' stroke='%23c8a44e' stroke-width='5' opacity='0.7'/><circle cx='64' cy='36' r='9' fill='%23c8a44e'/><rect x='53' y='52' width='22' height='46' rx='4' fill='%23c8a44e'/></svg>">
+    <style>
+        :root {
+            --white: #ffffff;
+            --off-white: #f8f9fa;
+            --gray-50: #f1f3f5;
+            --gray-100: #e9ecef;
+            --gray-200: #dee2e6;
+            --gray-300: #ced4da;
+            --gray-400: #adb5bd;
+            --gray-500: #868e96;
+            --gray-600: #6c757d;
+            --gray-700: #495057;
+            --gray-800: #343a40;
+            --gray-900: #212529;
+            --accent: #0c6b4e;
+            --accent-light: #10b981;
+            --accent-bg: #ecfdf5;
+            --accent-border: #a7f3d0;
+            --navy: #0f172a;
+            --navy-light: #1e293b;
+            --font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: var(--font);
+            background: var(--white);
+            color: var(--gray-900);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(15, 23, 42, 1);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        nav .nav-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.3px;
+        }
+
+        .logo-mark {
+            width: 28px; height: 28px;
+            flex-shrink: 0;
+        }
+
+        .logo-mark svg { width: 100%; height: 100%; }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--white); }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-family: var(--font);
+        }
+
+        .btn-primary { background: var(--accent-light); color: var(--navy); }
+        .btn-primary:hover { background: var(--accent); color: var(--white); }
+
+        /* Page header */
+        .page-header {
+            padding: 120px 0 48px;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.82rem;
+            color: var(--gray-500);
+            text-decoration: none;
+            margin-bottom: 28px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover { color: var(--gray-900); }
+
+        .back-link svg {
+            width: 14px; height: 14px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .page-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+            letter-spacing: -0.3px;
+        }
+
+        .job-meta-bar {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .job-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+
+        .job-meta-item svg {
+            width: 15px; height: 15px;
+            stroke: var(--gray-400);
+            fill: none;
+            stroke-width: 2;
+        }
+
+        /* Content */
+        .job-content {
+            padding: 48px 0 96px;
+        }
+
+        .job-section {
+            margin-bottom: 40px;
+        }
+
+        .job-section h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .job-section p {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .job-section ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .job-section ul li {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .job-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 5px;
+            height: 5px;
+            background: var(--accent-light);
+            border-radius: 50%;
+        }
+
+        .compensation-box {
+            background: var(--accent-bg);
+            border: 1px solid var(--accent-border);
+            border-radius: 10px;
+            padding: 24px 28px;
+            margin-bottom: 12px;
+        }
+
+        .compensation-box .comp-label {
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .compensation-box .comp-value {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .compensation-box .comp-note {
+            font-size: 0.82rem;
+            color: var(--gray-600);
+            margin-top: 4px;
+        }
+
+        /* Apply section */
+        .apply-section {
+            background: var(--off-white);
+            border: 1px solid var(--gray-100);
+            border-radius: 12px;
+            padding: 36px;
+            margin-top: 48px;
+        }
+
+        .apply-section h2 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 16px;
+        }
+
+        .apply-section ul {
+            list-style: none;
+            margin: 0 0 24px;
+            padding: 0;
+        }
+
+        .apply-section ul li {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .apply-section ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 5px;
+            height: 5px;
+            background: var(--accent-light);
+            border-radius: 50%;
+        }
+
+        .apply-section .btn {
+            padding: 14px 32px;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0;
+            border-top: 1px solid var(--gray-100);
+        }
+
+        footer .nav-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left .logo { color: var(--gray-900); }
+
+        .footer-copy {
+            font-size: 0.78rem;
+            color: var(--gray-400);
+            margin-top: 8px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 0.82rem;
+            color: var(--gray-500);
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+
+        .footer-links a:hover { color: var(--gray-900); }
+
+        @media (max-width: 600px) {
+            .page-header h1 { font-size: 1.6rem; }
+            .nav-links { display: none; }
+            .job-meta-bar { flex-direction: column; gap: 8px; }
+            footer .nav-container { flex-direction: column; gap: 16px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <a href="index.html" class="logo">
+            <div class="logo-mark"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="28" fill="#0f172a"/><circle cx="64" cy="36" r="22" fill="none" stroke="#c8a44e" stroke-width="5" opacity="0.5"/><circle cx="64" cy="36" r="16" fill="none" stroke="#c8a44e" stroke-width="5" opacity="0.7"/><circle cx="64" cy="36" r="9" fill="#c8a44e"/><rect x="53" y="52" width="22" height="46" rx="4" fill="#c8a44e"/></svg></div>
+            ijeoma
+        </a>
+        <div class="nav-links">
+            <a href="index.html#capabilities">Platform</a>
+            <a href="index.html#solutions">Solutions</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#careers">Careers</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
+    <div class="page-header">
+        <a href="index.html#careers" class="back-link">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            Back to Careers
+        </a>
+        <h1>Content &amp; Media Assistant</h1>
+        <div class="job-meta-bar">
+            <div class="job-meta-item">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+                Contract — 3 months minimum
+            </div>
+            <div class="job-meta-item">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                Remote (Nigeria)
+            </div>
+            <div class="job-meta-item">
+                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+                Ijeoma Intelligence
+            </div>
+        </div>
+    </div>
+
+    <div class="job-content">
+
+        <div class="job-section">
+            <h2>About Ijeoma</h2>
+            <p>Ijeoma is a safety intelligence platform that helps organisations protect field operators in high-risk mobility environments. We compute risk exposure per person, per route, per moment — combining real-time threat intelligence, continuous monitoring, and automated escalation into one unified system.</p>
+        </div>
+
+        <div class="job-section">
+            <h2>The Role</h2>
+            <p>We need someone to own Ijeoma's social media presence across LinkedIn, Twitter/X, and TikTok. You will create content, manage our pages, and go into the field to capture street interviews and vox pops that bring our mission to life. You will work directly with the founder.</p>
+        </div>
+
+        <div class="job-section">
+            <h2>What You'll Do</h2>
+            <ul>
+                <li>Create and schedule content across LinkedIn, Twitter/X, and TikTok</li>
+                <li>Develop educational and operational content around safety, route risk, and field security</li>
+                <li>Conduct street interviews and vox pops — content that performs well on all our social media platforms</li>
+                <li>Manage community engagement and grow the following</li>
+                <li>Maintain a content calendar with a draft-approve-post workflow</li>
+            </ul>
+        </div>
+
+        <div class="job-section">
+            <h2>Requirements</h2>
+            <ul>
+                <li>Strong understanding of how content works differently on TikTok, Twitter/X, and LinkedIn</li>
+                <li>Ability to shoot and edit short-form video</li>
+                <li>Good spoken and written English</li>
+                <li>Comfortable approaching strangers for street interviews</li>
+                <li>Based in Nigeria, preferably Lagos or Abuja</li>
+                <li>Self-starter who can work independently</li>
+            </ul>
+        </div>
+
+        <div class="job-section">
+            <h2>Nice to Have</h2>
+            <ul>
+                <li>Studying or recently graduated in communications, media studies, or marketing</li>
+                <li>Interest in security, technology, or social impact</li>
+                <li>Existing portfolio of content you have created (personal accounts count)</li>
+                <li>Basic graphic design skills (Canva or similar)</li>
+            </ul>
+        </div>
+
+        <div class="job-section">
+            <h2>Compensation &amp; Working Arrangement</h2>
+            <div class="compensation-box">
+                <div class="comp-label">Compensation</div>
+                <div class="comp-value">₦100,000 – ₦150,000/month</div>
+                <div class="comp-note">₦100,000 remote · ₦150,000 for months requiring in-person fieldwork</div>
+            </div>
+            <ul>
+                <li>Fully remote with occasional fieldwork as needed</li>
+                <li>Direct reporting to the founder</li>
+                <li>Weekly content review calls</li>
+                <li>Minimum 3-month commitment</li>
+            </ul>
+        </div>
+
+        <div class="apply-section">
+            <h2>How to Apply</h2>
+            <p style="font-size:0.95rem; color:var(--gray-600); margin-bottom:16px;">Send the following to <strong>careers@ijeomaintelligence.com</strong>:</p>
+            <ul>
+                <li>A short note (max 200 words) on what content you would create for a safety intelligence platform in week one</li>
+                <li>Links to social media accounts or content you have managed or created (personal accounts are fine)</li>
+                <li>Your availability and location in Nigeria</li>
+            </ul>
+            <a href="mailto:careers@ijeomaintelligence.com?subject=Application%20-%20Content%20%26%20Media%20Assistant" class="btn btn-primary">Apply Now</a>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <div class="nav-container">
+        <div class="footer-left">
+            <a href="index.html" class="logo">
+                <div class="logo-mark"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="28" fill="#0f172a"/><circle cx="64" cy="36" r="22" fill="none" stroke="#c8a44e" stroke-width="5" opacity="0.5"/><circle cx="64" cy="36" r="16" fill="none" stroke="#c8a44e" stroke-width="5" opacity="0.7"/><circle cx="64" cy="36" r="9" fill="#c8a44e"/><rect x="53" y="52" width="22" height="46" rx="4" fill="#c8a44e"/></svg></div>
+                ijeoma
+            </a>
+            <div class="footer-copy">© 2026 Ijeoma Intelligence Ltd. All rights reserved.</div>
+        </div>
+        <div class="footer-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#careers">Careers</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
