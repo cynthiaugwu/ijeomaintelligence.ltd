@@ -11,6 +11,6 @@ Ijeoma is a safety intelligence company building technology that protects people
 
 The name "Ijeoma" means "safe journey" in Igbo.
 
-**Headquarters:** London, United Kingdom
+**Office:** London, United Kingdom
 
 © 2026 Ijeoma Intelligence Ltd
