@@ -3,108 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ijeoma Intelligence is hiring a Data & ML Engineer on a 3-month contract to own the data infrastructure, ML pipeline, and enterprise platform.">
+    <meta name="description" content="Ijeoma Intelligence is hiring a Data and ML Engineer on a 3-month remote contract.">
     <title>Data &amp; ML Engineer | Careers | Ijeoma Intelligence</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='28' fill='%230f172a'/><circle cx='64' cy='36' r='22' fill='none' stroke='%23c8a44e' stroke-width='3' opacity='0.25'/><circle cx='64' cy='36' r='16' fill='none' stroke='%23c8a44e' stroke-width='3.5' opacity='0.45'/><circle cx='64' cy='36' r='8' fill='%23c8a44e'/><rect x='54' y='52' width='20' height='46' rx='4' fill='%23c8a44e'/></svg>">
     <style>
-        :root {
-            --white: #ffffff;
-            --off-white: #f8f9fa;
-            --gray-50: #f1f3f5;
-            --gray-100: #e9ecef;
-            --gray-200: #dee2e6;
-            --gray-300: #ced4da;
-            --gray-400: #adb5bd;
-            --gray-500: #868e96;
-            --gray-600: #6c757d;
-            --gray-700: #495057;
-            --gray-800: #343a40;
-            --gray-900: #212529;
-            --accent: #0c6b4e;
-            --accent-light: #10b981;
-            --accent-bg: #ecfdf5;
-            --accent-border: #a7f3d0;
-            --navy: #0f172a;
-            --navy-light: #1e293b;
-            --font: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            --mono: 'IBM Plex Mono', monospace;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font); background: var(--white); color: var(--gray-900); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 780px; margin: 0 auto; padding: 0 24px; }
-        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(15, 23, 42, 1); border-bottom: 1px solid rgba(255,255,255,0.06); }
-        nav .nav-container { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; height: 64px; }
-        .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.2rem; color: var(--white); text-decoration: none; letter-spacing: -0.3px; }
-        .logo-mark { width: 28px; height: 28px; flex-shrink: 0; }
-        .logo-mark svg { width: 100%; height: 100%; }
-        .nav-links { display: flex; align-items: center; gap: 24px; }
-        .nav-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.2s; }
-        .nav-links a:hover { color: var(--white); }
-        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; font-size: 0.85rem; font-weight: 600; border-radius: 6px; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; font-family: var(--font); }
-        .btn-primary { background: var(--accent-light); color: var(--navy); }
-        .btn-primary:hover { background: var(--accent); color: var(--white); }
-        .page-header { padding: 120px 0 48px; border-bottom: 1px solid var(--gray-100); }
-        .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--gray-500); text-decoration: none; margin-bottom: 28px; transition: color 0.2s; }
-        .back-link:hover { color: var(--gray-900); }
-        .back-link svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
-        .page-header h1 { font-size: 2rem; font-weight: 700; color: var(--gray-900); margin-bottom: 16px; letter-spacing: -0.3px; }
-        .job-meta-bar { display: flex; gap: 20px; flex-wrap: wrap; }
-        .job-meta-item { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: var(--gray-600); }
-        .job-meta-item svg { width: 15px; height: 15px; stroke: var(--gray-400); fill: none; stroke-width: 2; }
-        .job-content { padding: 48px 0 96px; }
-        .job-section { margin-bottom: 40px; }
-        .job-section h2 { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--gray-100); }
-        .job-section p { font-size: 0.95rem; color: var(--gray-600); line-height: 1.8; margin-bottom: 12px; }
-        .job-section ul { list-style: none; margin: 0; padding: 0; }
-        .job-section ul li { font-size: 0.95rem; color: var(--gray-600); line-height: 1.7; padding: 6px 0; padding-left: 20px; position: relative; }
-        .job-section ul li::before { content: ''; position: absolute; left: 0; top: 14px; width: 5px; height: 5px; background: var(--accent-light); border-radius: 50%; }
-        .compensation-box { background: var(--accent-bg); border: 1px solid var(--accent-border); border-radius: 10px; padding: 24px 28px; margin-bottom: 12px; }
-        .compensation-box .comp-label { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
-        .compensation-box .comp-note { font-size: 0.82rem; color: var(--gray-600); margin-top: 4px; }
-        .apply-section { background: var(--off-white); border: 1px solid var(--gray-100); border-radius: 12px; padding: 36px; margin-top: 48px; }
-        .apply-section h2 { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin-bottom: 16px; }
-        .apply-section ul { list-style: none; margin: 0 0 24px; padding: 0; }
-        .apply-section ul li { font-size: 0.95rem; color: var(--gray-600); line-height: 1.7; padding: 6px 0; padding-left: 20px; position: relative; }
-        .apply-section ul li::before { content: ''; position: absolute; left: 0; top: 14px; width: 5px; height: 5px; background: var(--accent-light); border-radius: 50%; }
-        .apply-section .btn { padding: 14px 32px; font-size: 0.95rem; }
-        footer { padding: 48px 0; border-top: 1px solid var(--gray-100); }
-        footer .nav-container { max-width: 1140px; margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; }
-        .footer-left .logo { color: var(--gray-900); }
-        .footer-copy { font-size: 0.78rem; color: var(--gray-400); margin-top: 8px; }
-        .footer-links { display: flex; gap: 24px; }
-        .footer-links a { font-size: 0.82rem; color: var(--gray-500); text-decoration: none; transition: color 0.15s; }
-        .footer-links a:hover { color: var(--gray-900); }
-        @media (max-width: 600px) { .page-header h1 { font-size: 1.6rem; } .nav-links { display: none; } .job-meta-bar { flex-direction: column; gap: 8px; } footer .nav-container { flex-direction: column; gap: 16px; text-align: center; } }
+        :root{--bg:#0c1018;--surface:#111824;--text-primary:#e4e8ec;--text-secondary:rgba(228,232,236,.55);--text-tertiary:rgba(228,232,236,.25);--accent:#c8a44e;--accent-dim:rgba(200,164,78,.12);--accent-border:rgba(200,164,78,.2);--border:rgba(255,255,255,.04);--border-light:rgba(255,255,255,.06);--serif:'Cormorant Garamond',Georgia,serif;--sans:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,sans-serif;--mono:'IBM Plex Mono',monospace}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:var(--sans);background:var(--bg);color:var(--text-primary);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}.container{max-width:720px;margin:0 auto;padding:0 48px}.topbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 48px;height:72px;display:flex;justify-content:space-between;align-items:center;background:var(--bg);border-bottom:1px solid var(--border)}.logo{display:flex;align-items:center;gap:12px;text-decoration:none}.logo-mark{width:32px;height:32px}.logo-mark svg{width:100%;height:100%}.logo-text{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--text-primary);letter-spacing:.02em}.topbar-right a{font-size:.8rem;font-weight:500;color:var(--text-secondary);text-decoration:none;letter-spacing:.03em;transition:color .3s}.topbar-right a:hover{color:var(--accent)}.page-header{padding:120px 0 40px;border-bottom:1px solid var(--border)}.back-link{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;color:var(--text-tertiary);text-decoration:none;margin-bottom:32px;transition:color .3s}.back-link:hover{color:var(--accent)}.back-link svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}.open-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:var(--accent-dim);border:1px solid var(--accent-border);border-radius:100px;font-size:.72rem;font-weight:500;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px}.open-badge .dot{width:6px;height:6px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}.page-header h1{font-family:var(--serif);font-size:2.2rem;font-weight:600;color:var(--text-primary);margin-bottom:18px;letter-spacing:-.01em}.job-meta-bar{display:flex;gap:20px;flex-wrap:wrap}.job-meta-item{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text-tertiary)}.job-meta-item svg{width:14px;height:14px;stroke:var(--text-tertiary);fill:none;stroke-width:2}.job-content{padding:48px 0 80px}.job-section{margin-bottom:40px}.job-section h2{font-family:var(--serif);font-size:1.2rem;font-weight:600;color:var(--text-primary);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border)}.job-section p{font-size:.92rem;font-weight:300;color:var(--text-secondary);line-height:1.8;margin-bottom:12px}.job-section ul{list-style:none;margin:0;padding:0}.job-section ul li{font-size:.92rem;font-weight:300;color:var(--text-secondary);line-height:1.7;padding:6px 0;padding-left:18px;position:relative}.job-section ul li::before{content:'';position:absolute;left:0;top:14px;width:4px;height:4px;background:var(--accent);border-radius:50%;opacity:.6}.nda-note{font-size:.8rem;font-weight:300;font-style:italic;color:var(--text-tertiary);margin-top:16px}.comp-box{background:var(--surface);border:1px solid var(--border-light);border-radius:8px;padding:24px 28px;margin-bottom:16px}.comp-box .comp-label{font-family:var(--mono);font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;margin-bottom:6px}.comp-box .comp-note{font-size:.85rem;font-weight:300;color:var(--text-secondary)}.apply-section{background:var(--surface);border:1px solid var(--border-light);border-radius:8px;padding:36px;margin-top:48px}.apply-section h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--text-primary);margin-bottom:12px}.apply-section>p{font-size:.88rem;font-weight:300;color:var(--text-secondary);margin-bottom:20px}.apply-section ul{list-style:none;margin:0 0 28px;padding:0}.apply-section ul li{font-size:.88rem;font-weight:300;color:var(--text-secondary);line-height:1.7;padding:5px 0;padding-left:18px;position:relative}.apply-section ul li::before{content:'';position:absolute;left:0;top:13px;width:4px;height:4px;background:var(--accent);border-radius:50%;opacity:.6}.apply-btn{display:inline-flex;padding:14px 28px;background:var(--accent);color:var(--bg);font-size:.82rem;font-weight:600;letter-spacing:.03em;text-decoration:none;border-radius:4px;transition:background .3s}.apply-btn:hover{background:#d4b35c}.footer{padding:32px 48px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}.footer-left{font-size:.7rem;color:var(--text-tertiary);letter-spacing:.02em}.footer-right{display:flex;gap:24px}.footer-right a{font-size:.72rem;color:var(--text-tertiary);text-decoration:none;transition:color .3s}.footer-right a:hover{color:var(--text-secondary)}@media(max-width:640px){.topbar{padding:0 24px;height:60px}.container{padding:0 24px}.page-header h1{font-size:1.7rem}.job-meta-bar{flex-direction:column;gap:8px}.apply-section{padding:28px}.footer{padding:24px;flex-direction:column;gap:16px;text-align:center}}
     </style>
 </head>
 <body>
 
-<nav>
-    <div class="nav-container">
-        <a href="index.html" class="logo">
-            <div class="logo-mark"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="28" fill="#0f172a"/><circle cx="64" cy="36" r="22" fill="none" stroke="#c8a44e" stroke-width="3" opacity="0.25"/><circle cx="64" cy="36" r="16" fill="none" stroke="#c8a44e" stroke-width="3.5" opacity="0.45"/><circle cx="64" cy="36" r="8" fill="#c8a44e"/><rect x="54" y="52" width="20" height="46" rx="4" fill="#c8a44e"/></svg></div>
-            ijeoma
-        </a>
-        <div class="nav-links">
-            <a href="index.html#capabilities">Platform</a>
-            <a href="index.html#solutions">Solutions</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#careers">Careers</a>
-        </div>
+<div class="topbar">
+    <a href="index.html" class="logo">
+        <div class="logo-mark"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="28" fill="#0c1018"/><circle cx="64" cy="36" r="22" fill="none" stroke="#c8a44e" stroke-width="3" opacity="0.25"/><circle cx="64" cy="36" r="16" fill="none" stroke="#c8a44e" stroke-width="3.5" opacity="0.45"/><circle cx="64" cy="36" r="8" fill="#c8a44e"/><rect x="54" y="52" width="20" height="46" rx="4" fill="#c8a44e"/></svg></div>
+        <span class="logo-text">Ijeoma</span>
+    </a>
+    <div class="topbar-right">
+        <a href="index.html">Home</a>
     </div>
-</nav>
+</div>
 
 <div class="container">
 
     <div class="page-header">
-        <a href="index.html#careers" class="back-link">
+        <a href="index.html" class="back-link">
             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-            Back to Careers
+            Home
         </a>
+        <div class="open-badge">
+            <span class="dot"></span>
+            Accepting Applications
+        </div>
         <h1>Data &amp; ML Engineer</h1>
         <div class="job-meta-bar">
             <div class="job-meta-item">
@@ -115,10 +46,6 @@
                 <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
                 Remote — Nigeria
             </div>
-            <div class="job-meta-item">
-                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0112 2a8 8 0 018 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
-                Ijeoma Intelligence
-            </div>
         </div>
     </div>
 
@@ -126,28 +53,26 @@
 
         <div class="job-section">
             <h2>About Ijeoma</h2>
-            <p>Ijeoma Intelligence is a real-time safety intelligence platform designed for organisations and individuals working in high-risk environments. By computing risk per person, route, and moment, Ijeoma combines live threat signals, environmental exposure, and behavioural patterns to continuously assess current safety levels. Built on the principle of proactive safety intelligence, the platform assumes users are unsafe until proven otherwise, ensuring continuous safety verification. Initially launching in Nigeria, Ijeoma aims to serve the world's most complex and challenging operating environments.</p>
+            <p>Ijeoma Intelligence is a real-time safety platform for individuals and organisations operating in high-risk environments. Initially launching in Nigeria, Ijeoma aims to serve the world's most complex and challenging operating environments.</p>
         </div>
 
         <div class="job-section">
             <h2>The Role</h2>
-            <p>We need an engineer to own the data infrastructure, machine learning pipeline, and backend systems that power the Ijeoma platform. This includes the data pipeline, ML model deployment, backend architecture, enterprise web platform, and admin tooling. You will work directly with the founder, who will provide detailed technical specifications under contract.</p>
+            <p>We need an engineer to own the data infrastructure, backend systems, and machine learning pipeline that power the platform. You will work directly with the founder, who will provide detailed technical specifications under contract.</p>
         </div>
 
         <div class="job-section">
             <h2>What You'll Work On</h2>
             <ul>
                 <li>Design and maintain the backend data architecture across multiple data sources</li>
-                <li>Build and harden data ingestion pipelines with classification, validation, and deduplication across multiple languages including Hausa, Pidgin, Yoruba, and French</li>
-                <li>Build and deploy machine learning models for predictive risk scoring, behavioural anomaly detection, and temporal pattern recognition</li>
-                <li>Develop the enterprise web platform for organisational clients — real-time monitoring, team oversight, compliance reporting</li>
-                <li>Extend the existing admin dashboard with operational management tools</li>
-                <li>Build backend services that synthesise multiple data streams into actionable intelligence</li>
+                <li>Build and harden data ingestion pipelines with classification, validation, and deduplication</li>
+                <li>Build and deploy machine learning models from provided specifications</li>
+                <li>Develop the enterprise web platform for organisational clients</li>
+                <li>Build backend services that process and serve data to the mobile application</li>
                 <li>Define and maintain API contracts consumed by the mobile application</li>
-                <li>Ensure structured event capture across all system touchpoints with proper schema design</li>
-                <li>Integrate environmental data layers including satellite-derived land cover, incident density, and temporal risk patterns into the risk computation pipeline</li>
+                <li>Ensure structured event capture across all system touchpoints</li>
             </ul>
-            <p style="margin-top:16px; font-size:0.88rem; color:var(--gray-500); font-style:italic;">Full technical specifications and system architecture will be shared under NDA.</p>
+            <p class="nda-note">Full technical specifications, system architecture, and data strategy will be shared under NDA.</p>
         </div>
 
         <div class="job-section">
@@ -157,13 +82,11 @@
                 <li>Strong database design skills — Firestore, PostgreSQL, or equivalent</li>
                 <li>Experience building data pipelines and ingestion systems</li>
                 <li>Advanced Python proficiency</li>
-                <li>Experience with machine learning model building and deployment in production</li>
+                <li>Experience with machine learning model building and deployment</li>
                 <li>React or Next.js for web platform development</li>
-                <li>Experience building B2B SaaS platforms or enterprise dashboards</li>
                 <li>Comfortable with geospatial data and real-time systems</li>
                 <li>Security-conscious — API hardening, role-based access, data protection</li>
                 <li>Self-directed and able to make sound architectural decisions independently</li>
-                <li>Experience working in or building for low-connectivity environments</li>
             </ul>
         </div>
 
@@ -173,15 +96,13 @@
                 <li>At least 1 enterprise platform built and deployed</li>
                 <li>Experience with safety, security, intelligence, or logistics platforms</li>
                 <li>Web scraping and data quality systems</li>
-                <li>Multi-lingual NLP or text processing experience</li>
                 <li>Building for emerging market infrastructure constraints</li>
-                <li>Experience with predictive modelling, classification, or time-series forecasting</li>
             </ul>
         </div>
 
         <div class="job-section">
             <h2>Compensation &amp; Working Arrangement</h2>
-            <div class="compensation-box">
+            <div class="comp-box">
                 <div class="comp-label">Compensation</div>
                 <div class="comp-note">Full engagement (3 months) · Based on experience</div>
             </div>
@@ -197,34 +118,25 @@
 
         <div class="apply-section">
             <h2>How to Apply</h2>
-            <p style="font-size:0.95rem; color:var(--gray-600); margin-bottom:16px;">Send the following to <strong>careers@ijeomaintelligence.com</strong>:</p>
+            <p>Send the following to <strong style="color:var(--text-primary)">careers@ijeomaintelligence.com</strong></p>
             <ul>
-                <li>CV or portfolio with links to relevant work — data pipelines, ML models, enterprise dashboards, B2B platforms</li>
-                <li>A short note (max 300 words) on how you would approach designing a backend data architecture for a real-time intelligence platform</li>
+                <li>CV or portfolio with links to relevant work</li>
+                <li>A short note (max 300 words) on how you would approach designing a backend data architecture for a real-time platform</li>
                 <li>Your availability and expected compensation</li>
                 <li>Link to at least two GitHub repos of projects you built (not tutorial clones)</li>
             </ul>
-            <a href="mailto:careers@ijeomaintelligence.com?subject=Application%20-%20Data%20%26%20ML%20Engineer" class="btn btn-primary">Apply Now</a>
+            <a href="mailto:careers@ijeomaintelligence.com?subject=Application%20-%20Data%20%26%20ML%20Engineer" class="apply-btn">Apply Now</a>
         </div>
 
     </div>
 
 </div>
 
-<footer>
-    <div class="nav-container">
-        <div class="footer-left">
-            <a href="index.html" class="logo">
-                <div class="logo-mark"><svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg"><rect width="128" height="128" rx="28" fill="#0f172a"/><circle cx="64" cy="36" r="22" fill="none" stroke="#c8a44e" stroke-width="3" opacity="0.25"/><circle cx="64" cy="36" r="16" fill="none" stroke="#c8a44e" stroke-width="3.5" opacity="0.45"/><circle cx="64" cy="36" r="8" fill="#c8a44e"/><rect x="54" y="52" width="20" height="46" rx="4" fill="#c8a44e"/></svg></div>
-                ijeoma
-            </a>
-            <div class="footer-copy">© 2026 Ijeoma Intelligence Ltd. All rights reserved.</div>
-        </div>
-        <div class="footer-links">
-            <a href="index.html#about">About</a>
-            <a href="index.html#careers">Careers</a>
-            <a href="index.html#contact">Contact</a>
-        </div>
+<footer class="footer">
+    <div class="footer-left">&copy; 2026 Ijeoma Intelligence Ltd.</div>
+    <div class="footer-right">
+        <a href="careers.html">Careers</a>
+        <a href="mailto:info@ijeomaintelligence.com">Contact</a>
     </div>
 </footer>
 
