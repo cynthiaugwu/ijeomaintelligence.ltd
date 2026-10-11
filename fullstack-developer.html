@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Full-Stack Developer (Flutter) role at Ijeoma Intelligence. Contract · Remote · Nigeria."
+    >
+
+    <meta name="theme-color" content="#0F1B33">
+
+    <title>Full-Stack Developer (Flutter) | Careers | Ijeoma Intelligence</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/ijeoma-favicon.png"
+    >
+
+    <style>
+        :root {
+            --navy: #0F1B33;
+            --navy-2: #142341;
+            --gold: #C9A962;
+
+            --white: #FFFFFF;
+            --off-white: #F8F6F1;
+
+            --ink: #172033;
+            --muted: #666D78;
+            --stone: #8B8680;
+
+            --line: #D9D6CF;
+            --soft-line: #ECE9E2;
+
+            --max-width: 1240px;
+            --content-width: 780px;
+
+            --font-sans:
+                Inter,
+                ui-sans-serif,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Helvetica,
+                Arial,
+                sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--off-white);
+            color: var(--ink);
+            font-family: var(--font-sans);
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .shell {
+            width: min(
+                calc(100% - 64px),
+                var(--max-width)
+            );
+            margin: 0 auto;
+        }
+
+        .content-shell {
+            width: min(
+                calc(100% - 64px),
+                var(--content-width)
+            );
+            margin: 0 auto;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: var(--navy);
+            border-bottom:
+                1px solid rgba(255,255,255,.08);
+        }
+
+        .header-inner {
+            min-height: 78px;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(170px, 1fr)
+                auto
+                minmax(170px, 1fr);
+
+            align-items: center;
+            gap: 32px;
+        }
+
+        .brand {
+            justify-self: start;
+
+            display: inline-flex;
+            align-items: center;
+
+            text-decoration: none;
+        }
+
+        .brand img {
+            width: 156px;
+            height: auto;
+            max-height: 42px;
+            object-fit: contain;
+            object-position: left center;
+        }
+
+
+        /* Desktop navigation */
+
+        .desktop-nav {
+            min-height: 78px;
+
+            display: flex;
+            align-items: stretch;
+
+            gap: 30px;
+        }
+
+        .nav-item {
+            position: relative;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-trigger {
+            appearance: none;
+
+            height: 78px;
+
+            padding: 0;
+
+            border: 0;
+            background: transparent;
+
+            color: rgba(255,255,255,.88);
+
+            font: inherit;
+            font-size: .82rem;
+            font-weight: 600;
+            letter-spacing: .035em;
+
+            cursor: pointer;
+        }
+
+        .nav-trigger::after {
+            content: "";
+
+            display: inline-block;
+
+            width: 5px;
+            height: 5px;
+
+            margin-left: 9px;
+
+            border-right: 1px solid currentColor;
+            border-bottom: 1px solid currentColor;
+
+            transform:
+                rotate(45deg)
+                translateY(-2px);
+
+            opacity: .6;
+        }
+
+        .nav-trigger:hover,
+        .nav-trigger:focus-visible {
+            color: var(--white);
+        }
+
+
+        /* Dropdown */
+
+        .dropdown {
+            position: absolute;
+
+            top: calc(100% - 1px);
+            left: 50%;
+
+            width: 236px;
+
+            padding: 10px;
+
+            background: var(--white);
+
+            border:
+                1px solid var(--soft-line);
+
+            box-shadow:
+                0 18px 45px
+                rgba(15,27,51,.12);
+
+            transform:
+                translate(-50%, 8px);
+
+            visibility: hidden;
+            opacity: 0;
+
+            pointer-events: none;
+
+            transition:
+                opacity .16s ease,
+                transform .16s ease,
+                visibility .16s;
+        }
+
+        .nav-item:hover .dropdown,
+        .nav-item:focus-within .dropdown,
+        .nav-item[data-open="true"] .dropdown {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+
+            transform:
+                translate(-50%, 0);
+        }
+
+        .dropdown a {
+            display: block;
+
+            padding: 11px 12px;
+
+            color: var(--navy);
+
+            text-decoration: none;
+
+            font-size: .84rem;
+            line-height: 1.25;
+        }
+
+        .dropdown a:hover,
+        .dropdown a:focus-visible {
+            background: var(--off-white);
+            outline: none;
+        }
+
+
+        /* Header CTA */
+
+        .header-cta {
+            justify-self: end;
+
+            padding: 12px 17px;
+
+            color: var(--navy);
+            background: var(--white);
+
+            border:
+                1px solid rgba(255,255,255,.65);
+
+            text-decoration: none;
+
+            font-size: .8rem;
+            font-weight: 700;
+
+            transition:
+                background .2s ease,
+                color .2s ease;
+        }
+
+        .header-cta:hover,
+        .header-cta:focus-visible {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .mobile-panel {
+            display: none;
+        }
+
+
+        /* =====================================================
+           ROLE HEADER
+        ===================================================== */
+
+        .role-hero {
+            background: var(--white);
+
+            border-bottom:
+                1px solid var(--soft-line);
+        }
+
+        .role-hero-inner {
+            padding:
+                clamp(74px, 9vw, 118px)
+                0
+                clamp(64px, 8vw, 96px);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 46px;
+
+            color: var(--muted);
+
+            text-decoration: none;
+
+            font-size: .78rem;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            color: var(--navy);
+        }
+
+        .back-link svg {
+            width: 15px;
+            height: 15px;
+
+            stroke: currentColor;
+            fill: none;
+
+            stroke-width: 1.8;
+        }
+
+        .role-eyebrow {
+            margin:
+                0
+                0
+                20px;
+
+            color: var(--stone);
+
+            font-size: .72rem;
+            font-weight: 700;
+
+            letter-spacing: .18em;
+
+            text-transform: uppercase;
+        }
+
+        .role-hero h1 {
+            margin: 0;
+
+            color: var(--navy);
+
+            font-size:
+                clamp(3rem, 5.8vw, 5.8rem);
+
+            line-height: .98;
+
+            letter-spacing: -.05em;
+
+            font-weight: 620;
+        }
+
+        .role-meta {
+            margin-top: 30px;
+
+            color: var(--muted);
+
+            font-size: .92rem;
+            font-weight: 500;
+        }
+
+
+        /* =====================================================
+           ROLE CONTENT
+        ===================================================== */
+
+        .role-content {
+            padding:
+                clamp(72px, 9vw, 110px)
+                0
+                clamp(90px, 10vw, 140px);
+        }
+
+        .job-section {
+            padding:
+                0
+                0
+                52px;
+
+            margin-bottom: 52px;
+
+            border-bottom:
+                1px solid var(--line);
+        }
+
+        .job-section:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .job-section h2 {
+            margin:
+                0
+                0
+                22px;
+
+            color: var(--navy);
+
+            font-size:
+                clamp(1.35rem, 2vw, 1.7rem);
+
+            line-height: 1.2;
+
+            letter-spacing: -.025em;
+
+            font-weight: 650;
+        }
+
+        .job-section p {
+            margin:
+                0
+                0
+                16px;
+
+            color: var(--muted);
+
+            font-size: .98rem;
+            line-height: 1.8;
+        }
+
+        .job-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-section ul {
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+        }
+
+        .job-section li {
+            position: relative;
+
+            padding:
+                7px
+                0
+                7px
+                20px;
+
+            color: var(--muted);
+
+            font-size: .96rem;
+            line-height: 1.7;
+        }
+
+        .job-section li::before {
+            content: "";
+
+            position: absolute;
+
+            top: 18px;
+            left: 0;
+
+            width: 5px;
+            height: 5px;
+
+            background: var(--gold);
+        }
+
+
+        /* =====================================================
+           WORKING ARRANGEMENT
+        ===================================================== */
+
+        .arrangement {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0,1fr));
+
+            gap: 0;
+
+            margin-top: 28px;
+
+            border-top:
+                1px solid var(--line);
+
+            border-bottom:
+                1px solid var(--line);
+        }
+
+        .arrangement-item {
+            padding:
+                22px
+                20px
+                22px
+                0;
+
+            border-right:
+                1px solid var(--line);
+        }
+
+        .arrangement-item:last-child {
+            padding-left: 20px;
+
+            border-right: 0;
+        }
+
+        .arrangement-label {
+            margin-bottom: 8px;
+
+            color: var(--stone);
+
+            font-size: .65rem;
+            font-weight: 700;
+
+            letter-spacing: .14em;
+
+            text-transform: uppercase;
+        }
+
+        .arrangement-value {
+            color: var(--navy);
+
+            font-size: .95rem;
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           CLOSED ROLE
+        ===================================================== */
+
+        .closed-section {
+            margin-top: 72px;
+
+            padding:
+                clamp(38px, 5vw, 58px);
+
+            background: var(--navy);
+
+            color: var(--white);
+        }
+
+        .closed-section h2 {
+            margin:
+                0
+                0
+                16px;
+
+            color: var(--white);
+
+            font-size:
+                clamp(1.8rem, 3vw, 2.8rem);
+
+            line-height: 1.05;
+
+            letter-spacing: -.035em;
+
+            font-weight: 620;
+        }
+
+        .closed-section p {
+            max-width: 560px;
+
+            margin: 0;
+
+            color:
+                rgba(255,255,255,.68);
+
+            font-size: .94rem;
+            line-height: 1.7;
+        }
+
+        .closed-link {
+            display: inline-flex;
+
+            margin-top: 30px;
+
+            min-height: 44px;
+
+            align-items: center;
+
+            padding: 0 4px;
+
+            color: var(--white);
+
+            text-decoration: none;
+
+            font-size: .8rem;
+            font-weight: 700;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.38);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .site-footer {
+            background: #0B1529;
+
+            color:
+                rgba(255,255,255,.72);
+
+            border-top:
+                1px solid rgba(255,255,255,.08);
+        }
+
+        .footer-main {
+            display: grid;
+
+            grid-template-columns:
+                1.25fr
+                1fr
+                1fr;
+
+            gap: 54px;
+
+            padding:
+                54px
+                0
+                40px;
+        }
+
+        .footer-logo img {
+            width: 148px;
+        }
+
+        .footer-label {
+            margin:
+                0
+                0
+                16px;
+
+            color:
+                rgba(255,255,255,.4);
+
+            font-size: .67rem;
+            font-weight: 700;
+
+            letter-spacing: .15em;
+
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap:
+                11px
+                24px;
+        }
+
+        .footer-links a {
+            color:
+                rgba(255,255,255,.72);
+
+            text-decoration: none;
+
+            font-size: .8rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            padding:
+                20px
+                0
+                30px;
+
+            border-top:
+                1px solid rgba(255,255,255,.08);
+
+            color:
+                rgba(255,255,255,.35);
+
+            font-size: .7rem;
+        }
+
+
+        /* =====================================================
+           TABLET / MOBILE
+        ===================================================== */
+
+        @media (max-width: 980px) {
+
+            .shell,
+            .content-shell {
+                width:
+                    min(
+                        calc(100% - 40px),
+                        var(--max-width)
+                    );
+            }
+
+            .content-shell {
+                max-width: var(--content-width);
+            }
+
+            .header-inner {
+                min-height: 68px;
+
+                grid-template-columns:
+                    1fr
+                    auto;
+            }
+
+            .desktop-nav,
+            .header-cta {
+                display: none;
+            }
+
+            .brand img {
+                width: 132px;
+            }
+
+            .menu-toggle {
+                position: relative;
+
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 44px;
+                height: 44px;
+
+                padding: 0;
+
+                color: var(--white);
+                background: transparent;
+
+                border:
+                    1px solid rgba(255,255,255,.22);
+
+                cursor: pointer;
+            }
+
+            .menu-toggle span,
+            .menu-toggle::before,
+            .menu-toggle::after {
+                content: "";
+
+                position: absolute;
+
+                display: block;
+
+                width: 17px;
+                height: 1px;
+
+                background: currentColor;
+            }
+
+            .menu-toggle::before {
+                transform:
+                    translateY(-5px);
+            }
+
+            .menu-toggle::after {
+                transform:
+                    translateY(5px);
+            }
+
+            .menu-toggle[aria-expanded="true"] span {
+                opacity: 0;
+            }
+
+            .menu-toggle[aria-expanded="true"]::before {
+                transform:
+                    rotate(45deg);
+            }
+
+            .menu-toggle[aria-expanded="true"]::after {
+                transform:
+                    rotate(-45deg);
+            }
+
+            .mobile-panel {
+                display: none;
+
+                padding:
+                    12px
+                    0
+                    24px;
+
+                border-top:
+                    1px solid rgba(255,255,255,.08);
+            }
+
+            .mobile-panel[data-open="true"] {
+                display: block;
+            }
+
+            .mobile-group {
+                border-bottom:
+                    1px solid rgba(255,255,255,.08);
+            }
+
+            .mobile-group button {
+                width: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding:
+                    17px
+                    0;
+
+                border: 0;
+
+                background: transparent;
+
+                color: var(--white);
+
+                font: inherit;
+                font-size: .86rem;
+                font-weight: 650;
+
+                text-align: left;
+            }
+
+            .mobile-group button::after {
+                content: "+";
+
+                color:
+                    rgba(255,255,255,.55);
+
+                font-size: 1.15rem;
+                font-weight: 400;
+            }
+
+            .mobile-group[data-open="true"]
+            button::after {
+                content: "−";
+            }
+
+            .mobile-links {
+                display: none;
+
+                padding:
+                    0
+                    0
+                    14px;
+            }
+
+            .mobile-group[data-open="true"]
+            .mobile-links {
+                display: grid;
+            }
+
+            .mobile-links a {
+                padding:
+                    10px
+                    0;
+
+                color:
+                    rgba(255,255,255,.62);
+
+                text-decoration: none;
+
+                font-size: .84rem;
+            }
+
+            .mobile-get {
+                display: inline-flex;
+
+                margin-top: 20px;
+
+                padding:
+                    12px
+                    16px;
+
+                color: var(--navy);
+                background: var(--white);
+
+                text-decoration: none;
+
+                font-size: .8rem;
+                font-weight: 700;
+            }
+
+            .footer-main {
+                grid-template-columns:
+                    1fr
+                    1fr;
+            }
+
+            .footer-logo {
+                grid-column:
+                    1 / -1;
+            }
+        }
+
+
+        @media (max-width: 620px) {
+
+            .shell,
+            .content-shell {
+                width:
+                    min(
+                        calc(100% - 32px),
+                        var(--max-width)
+                    );
+            }
+
+            .role-hero-inner {
+                padding-top: 64px;
+                padding-bottom: 64px;
+            }
+
+            .back-link {
+                margin-bottom: 34px;
+            }
+
+            .role-hero h1 {
+                font-size:
+                    clamp(
+                        2.7rem,
+                        13vw,
+                        4rem
+                    );
+            }
+
+            .arrangement {
+                grid-template-columns: 1fr;
+            }
+
+            .arrangement-item {
+                padding:
+                    18px
+                    0;
+
+                border-right: 0;
+
+                border-bottom:
+                    1px solid var(--line);
+            }
+
+            .arrangement-item:last-child {
+                padding-left: 0;
+                border-bottom: 0;
+            }
+
+            .closed-section {
+                padding:
+                    34px
+                    24px;
+            }
+
+            .footer-main {
+                grid-template-columns:
+                    1fr;
+
+                gap: 34px;
+            }
+
+            .footer-logo {
+                grid-column: auto;
+            }
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <div class="shell">
+
+        <div class="header-inner">
+
+            <a
+                class="brand"
+                href="index.html"
+                aria-label="Ijeoma home"
+            >
+
+                <img
+                    src="assets/ijeoma-logo-reversed.png"
+                    alt="Ijeoma"
+                >
+
+            </a>
+
+
+            <nav
+                class="desktop-nav"
+                aria-label="Primary navigation"
+            >
+
+                <div class="nav-item">
+
+                    <button
+                        class="nav-trigger"
+                        type="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        Product
+                    </button>
+
+                    <div class="dropdown">
+
+                        <a href="ijeoma.html">
+                            Ijeoma
+                        </a>
+
+                        <a href="haske.html">
+                            Haske
+                        </a>
+
+                        <a href="enterprise.html">
+                            Ijeoma Enterprise
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nav-item">
+
+                    <button
+                        class="nav-trigger"
+                        type="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        Solutions
+                    </button>
+
+                    <div class="dropdown">
+
+                        <a href="individuals.html">
+                            Individuals
+                        </a>
+
+                        <a href="extractives.html">
+                            Extractives
+                        </a>
+
+                        <a href="media.html">
+                            Media
+                        </a>
+
+                        <a href="ngo.html">
+                            NGO
+                        </a>
+
+                        <a href="security.html">
+                            Security
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nav-item">
+
+                    <button
+                        class="nav-trigger"
+                        type="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        Intelligence
+                    </button>
+
+                    <div class="dropdown">
+
+                        <a href="intelligence-briefs.html">
+                            Intelligence Briefs
+                        </a>
+
+                        <a href="podcast.html">
+                            Podcast
+                        </a>
+
+                        <a href="blog.html">
+                            Blog
+                        </a>
+
+                        <a href="case-studies.html">
+                            Case Studies
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nav-item">
+
+                    <button
+                        class="nav-trigger"
+                        type="button"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        Company
+                    </button>
+
+                    <div class="dropdown">
+
+                        <a href="about.html">
+                            About Us
+                        </a>
+
+                        <a href="careers.html">
+                            Careers
+                        </a>
+
+                        <a href="contact.html">
+                            Contact Us
+                        </a>
+
+                        <a href="news.html">
+                            Company News
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </nav>
+
+
+            <a
+                class="header-cta"
+                href="ijeoma.html"
+            >
+                Get Ijeoma
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+                <span></span>
+            </button>
+
+        </div>
+
+
+        <nav
+            class="mobile-panel"
+            aria-label="Mobile navigation"
+        >
+
+            <div class="mobile-group">
+
+                <button type="button">
+                    Product
+                </button>
+
+                <div class="mobile-links">
+
+                    <a href="ijeoma.html">
+                        Ijeoma
+                    </a>
+
+                    <a href="haske.html">
+                        Haske
+                    </a>
+
+                    <a href="enterprise.html">
+                        Ijeoma Enterprise
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="mobile-group">
+
+                <button type="button">
+                    Solutions
+                </button>
+
+                <div class="mobile-links">
+
+                    <a href="individuals.html">
+                        Individuals
+                    </a>
+
+                    <a href="extractives.html">
+                        Extractives
+                    </a>
+
+                    <a href="media.html">
+                        Media
+                    </a>
+
+                    <a href="ngo.html">
+                        NGO
+                    </a>
+
+                    <a href="security.html">
+                        Security
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="mobile-group">
+
+                <button type="button">
+                    Intelligence
+                </button>
+
+                <div class="mobile-links">
+
+                    <a href="intelligence-briefs.html">
+                        Intelligence Briefs
+                    </a>
+
+                    <a href="podcast.html">
+                        Podcast
+                    </a>
+
+                    <a href="blog.html">
+                        Blog
+                    </a>
+
+                    <a href="case-studies.html">
+                        Case Studies
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="mobile-group">
+
+                <button type="button">
+                    Company
+                </button>
+
+                <div class="mobile-links">
+
+                    <a href="about.html">
+                        About Us
+                    </a>
+
+                    <a href="careers.html">
+                        Careers
+                    </a>
+
+                    <a href="contact.html">
+                        Contact Us
+                    </a>
+
+                    <a href="news.html">
+                        Company News
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <a
+                class="mobile-get"
+                href="ijeoma.html"
+            >
+                Get Ijeoma
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<main>
+
+
+<section class="role-hero">
+
+    <div class="content-shell">
+
+        <div class="role-hero-inner">
+
+            <a
+                href="careers.html"
+                class="back-link"
+            >
+
+                <svg
+                    viewBox="0 0 24 24"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <line
+                        x1="19"
+                        y1="12"
+                        x2="5"
+                        y2="12"
+                    />
+
+                    <polyline
+                        points="12 19 5 12 12 5"
+                    />
+                </svg>
+
+                Careers
+
+            </a>
+
+
+            <p class="role-eyebrow">
+                Careers
+            </p>
+
+
+            <h1>
+                Full-Stack Developer (Flutter)
+            </h1>
+
+
+            <div class="role-meta">
+                Contract · Remote · Nigeria
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<section class="role-content">
+
+    <div class="content-shell">
+
+
+        <section class="job-section">
+
+            <h2>
+                About Ijeoma
+            </h2>
+
+            <p>
+                Ijeoma Intelligence develops safety intelligence
+                for people and organisations operating in complex
+                and changing risk environments.
+            </p>
+
+            <p>
+                Initially focused on Nigeria, we are building
+                systems designed for environments where risk,
+                movement and connectivity can change quickly.
+            </p>
+
+        </section>
+
+
+
+        <section class="job-section">
+
+            <h2>
+                The Role
+            </h2>
+
+            <p>
+                The Full-Stack Developer (Flutter) role supports
+                the development, reliability and production quality
+                of Ijeoma’s mobile products.
+            </p>
+
+            <p>
+                The work spans Flutter development, mobile performance,
+                platform integrations and the delivery of dependable
+                user experiences across varied device and connectivity
+                conditions.
+            </p>
+
+            <p>
+                It requires an engineer who can work independently,
+                improve an existing product and make practical
+                technical decisions in a production environment.
+            </p>
+
+        </section>
+
+
+
+        <section class="job-section">
+
+            <h2>
+                What You’ll Work On
+            </h2>
+
+            <ul>
+
+                <li>
+                    Build, improve and maintain Ijeoma’s Flutter
+                    mobile application.
+                </li>
+
+                <li>
+                    Improve application reliability, performance,
+                    error handling and overall production quality.
+                </li>
+
+                <li>
+                    Support dependable behaviour across changing
+                    connectivity conditions.
+                </li>
+
+                <li>
+                    Integrate mobile experiences with backend,
+                    geospatial and other product services.
+                </li>
+
+                <li>
+                    Strengthen secure local data handling and
+                    background mobile functionality.
+                </li>
+
+                <li>
+                    Optimise the application across a broad range
+                    of Android and iOS devices.
+                </li>
+
+                <li>
+                    Support testing, release preparation and
+                    production deployment.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <section class="job-section">
+
+            <h2>
+                What We’re Looking For
+            </h2>
+
+            <ul>
+
+                <li>
+                    Strong professional experience developing
+                    production Flutter applications.
+                </li>
+
+                <li>
+                    Experience delivering at least one production
+                    mobile application.
+                </li>
+
+                <li>
+                    Strong understanding of Flutter application
+                    architecture and state management.
+                </li>
+
+                <li>
+                    Experience integrating mobile applications
+                    with APIs and cloud services.
+                </li>
+
+                <li>
+                    Experience with offline behaviour, background
+                    services and data synchronisation.
+                </li>
+
+                <li>
+                    Experience with maps, geolocation or other
+                    location-aware mobile functionality.
+                </li>
+
+                <li>
+                    Good understanding of secure storage,
+                    data protection and mobile application security.
+                </li>
+
+                <li>
+                    Strong testing, debugging and release-management
+                    practices.
+                </li>
+
+                <li>
+                    Ability to work independently and maintain
+                    clean, dependable code.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <section class="job-section">
+
+            <h2>
+                Useful Experience
+            </h2>
+
+            <ul>
+
+                <li>
+                    Experience building safety, mobility, logistics
+                    or other operational mobile products.
+                </li>
+
+                <li>
+                    Experience building for low-connectivity
+                    or infrastructure-constrained environments.
+                </li>
+
+                <li>
+                    Experience with Firebase or equivalent
+                    cloud-service platforms.
+                </li>
+
+                <li>
+                    Experience working with native Android or iOS
+                    integrations alongside Flutter.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+
+        <section class="job-section">
+
+            <h2>
+                Working Arrangement
+            </h2>
+
+            <p>
+                This role works with the wider Ijeoma engineering
+                team to support the continued development and
+                production readiness of the mobile platform.
+            </p>
+
+
+            <div class="arrangement">
+
+                <div class="arrangement-item">
+
+                    <div class="arrangement-label">
+                        Engagement
+                    </div>
+
+                    <div class="arrangement-value">
+                        Contract
+                    </div>
+
+                </div>
+
+
+                <div class="arrangement-item">
+
+                    <div class="arrangement-label">
+                        Location
+                    </div>
+
+                    <div class="arrangement-value">
+                        Remote · Nigeria
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="closed-section">
+
+            <h2>
+                Applications are currently closed.
+            </h2>
+
+            <p>
+                This role is not currently accepting applications.
+                You can view other opportunities or submit a prospective
+                application through the Ijeoma Careers page.
+            </p>
+
+            <a
+                href="careers.html"
+                class="closed-link"
+            >
+                View current opportunities
+            </a>
+
+        </section>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    <div class="shell">
+
+        <div class="footer-main">
+
+
+            <div class="footer-logo">
+
+                <a
+                    href="index.html"
+                    aria-label="Ijeoma home"
+                >
+
+                    <img
+                        src="assets/ijeoma-logo-reversed.png"
+                        alt="Ijeoma"
+                    >
+
+                </a>
+
+            </div>
+
+
+
+            <div>
+
+                <p class="footer-label">
+                    Legal &amp; trust
+                </p>
+
+                <div class="footer-links">
+
+                    <a href="terms.html">
+                        Terms &amp; Conditions
+                    </a>
+
+                    <a href="privacy.html">
+                        Privacy Policy
+                    </a>
+
+                    <a href="security.html">
+                        Security
+                    </a>
+
+                    <a href="disclosure.html">
+                        Disclosure Policy
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div>
+
+                <p class="footer-label">
+                    Get in touch
+                </p>
+
+                <div class="footer-links">
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+                    <a href="#" rel="noopener">
+                        LinkedIn
+                    </a>
+
+                    <a href="#" rel="noopener">
+                        Instagram
+                    </a>
+
+                    <a href="#" rel="noopener">
+                        Facebook
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+            &copy; 2026 Ijeoma Intelligence Ltd.
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+(function () {
+
+    const navItems =
+        document.querySelectorAll(".nav-item");
+
+    const triggers =
+        document.querySelectorAll(".nav-trigger");
+
+
+    triggers.forEach(function (trigger) {
+
+        trigger.addEventListener(
+            "click",
+            function () {
+
+                const item =
+                    trigger.closest(".nav-item");
+
+                const isOpen =
+                    item.getAttribute("data-open")
+                    === "true";
+
+
+                navItems.forEach(function (other) {
+
+                    other.removeAttribute("data-open");
+
+                    const otherTrigger =
+                        other.querySelector(".nav-trigger");
+
+                    if (otherTrigger) {
+                        otherTrigger.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+                    }
+
+                });
+
+
+                if (!isOpen) {
+
+                    item.setAttribute(
+                        "data-open",
+                        "true"
+                    );
+
+                    trigger.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (!event.target.closest(".nav-item")) {
+
+                navItems.forEach(function (item) {
+
+                    item.removeAttribute("data-open");
+
+                    const trigger =
+                        item.querySelector(".nav-trigger");
+
+                    if (trigger) {
+                        trigger.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+                    }
+
+                });
+
+            }
+
+        }
+    );
+
+
+
+    const menuToggle =
+        document.querySelector(".menu-toggle");
+
+    const mobilePanel =
+        document.querySelector(".mobile-panel");
+
+
+    menuToggle.addEventListener(
+        "click",
+        function () {
+
+            const open =
+                menuToggle.getAttribute("aria-expanded")
+                === "true";
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                String(!open)
+            );
+
+            mobilePanel.setAttribute(
+                "data-open",
+                String(!open)
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                open
+                    ? "Open navigation"
+                    : "Close navigation"
+            );
+
+        }
+    );
+
+
+
+    document
+        .querySelectorAll(".mobile-group > button")
+        .forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    const group =
+                        button.closest(".mobile-group");
+
+                    const open =
+                        group.getAttribute("data-open")
+                        === "true";
+
+                    group.setAttribute(
+                        "data-open",
+                        String(!open)
+                    );
+
+                }
+            );
+
+        });
+
+})();
+
+</script>
+
+
+</body>
+</html>
