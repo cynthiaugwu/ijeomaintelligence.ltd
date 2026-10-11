@@ -1,402 +1,1990 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ijeoma — Security that moves with you. Launching in 2026. Built for the realities of movement in Nigeria.">
-    <title>Ijeoma Intelligence</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500;1,600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128'><rect width='128' height='128' rx='28' fill='%230f172a'/><circle cx='64' cy='36' r='22' fill='none' stroke='%23c8a44e' stroke-width='3' opacity='0.25'/><circle cx='64' cy='36' r='16' fill='none' stroke='%23c8a44e' stroke-width='3.5' opacity='0.45'/><circle cx='64' cy='36' r='8' fill='%23c8a44e'/><rect x='54' y='52' width='20' height='46' rx='4' fill='%23c8a44e'/></svg>">
-    <style>
-        :root {
-            --bg: #0c1018;
-            --surface: #111824;
-            --text-primary: #e4e8ec;
-            --text-secondary: rgba(228, 232, 236, 0.45);
-            --text-tertiary: rgba(228, 232, 236, 0.25);
-            --accent: #c8a44e;
-            --accent-dim: rgba(200, 164, 78, 0.12);
-            --accent-border: rgba(200, 164, 78, 0.2);
-            --border: rgba(255, 255, 255, 0.04);
-            --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-            --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            --mono: 'IBM Plex Mono', monospace;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Ijeoma — safety intelligence built around people, movement, and changing risk environments."
+  >
+  <meta name="theme-color" content="#0F1B33">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { height: 100%; }
+  <title>Ijeoma Intelligence</title>
 
-        body {
-            font-family: var(--sans);
-            background: var(--bg);
-            color: var(--text-primary);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden;
-        }
+  <!-- Replace with the final favicon PNG path in your repo -->
+  <link rel="icon" type="image/png" href="assets/ijeoma-favicon.png">
 
-        /* ===== Top bar ===== */
-        .topbar {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            padding: 0 48px;
-            height: 72px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: transparent;
-        }
+  <style>
+    :root {
+      --navy: #0F1B33;
+      --navy-2: #142341;
+      --gold: #C9A962;
+      --off-white: #F8F6F1;
+      --white: #FFFFFF;
+      --ink: #172033;
+      --stone: #8B8680;
+      --line: #D9D6CF;
+      --soft-line: #ECE9E2;
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
+      --max-width: 1240px;
 
-        .logo-mark {
-            width: 32px;
-            height: 32px;
-        }
+      --font-sans:
+        Inter,
+        ui-sans-serif,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Helvetica,
+        Arial,
+        sans-serif;
+    }
 
-        .logo-mark svg {
-            width: 100%;
-            height: 100%;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        .logo-text {
-            font-family: var(--serif);
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: 0.02em;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        .topbar-right a {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--text-secondary);
-            text-decoration: none;
-            letter-spacing: 0.03em;
-            transition: color 0.3s;
-        }
+    body {
+      margin: 0;
+      background: var(--off-white);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-        .topbar-right a:hover {
-            color: var(--accent);
-        }
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-        /* ===== Main content ===== */
-        .main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 72px 48px 0;
-        }
+    a {
+      color: inherit;
+    }
 
-        .content {
-            text-align: center;
-            max-width: 640px;
-            width: 100%;
-            margin-top: 48px;
-        }
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-        /* Headline */
-        .headline {
-            font-family: var(--serif);
-            font-size: 4.2rem;
-            font-weight: 700;
-            line-height: 1.12;
-            letter-spacing: -0.01em;
-            color: var(--text-primary);
-            margin-bottom: 56px;
-            opacity: 0;
-            animation: textIn 0.8s ease-out 0.5s forwards;
-        }
+    .shell {
+      width: min(calc(100% - 64px), var(--max-width));
+      margin: 0 auto;
+    }
 
-        .headline em {
-            font-style: italic;
-            font-weight: 600;
-            color: var(--accent);
-        }
+    /* =========================================================
+       HEADER
+    ========================================================= */
 
-        @keyframes textIn {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-        /* Launch date */
-        .launch-date {
-            font-family: var(--mono);
-            font-size: 0.78rem;
-            color: var(--accent);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            margin-bottom: 56px;
-            opacity: 0;
-            animation: textIn 0.8s ease-out 0.7s forwards;
-        }
+    .header-inner {
+      min-height: 78px;
 
-        /* Waitlist form */
-        .waitlist {
-            margin-bottom: 64px;
-            opacity: 0;
-            animation: textIn 0.8s ease-out 0.9s forwards;
-        }
+      display: grid;
+      grid-template-columns:
+        minmax(170px, 1fr)
+        auto
+        minmax(170px, 1fr);
 
-        .waitlist-form {
-            display: flex;
-            gap: 0;
-            max-width: 420px;
-            margin: 0 auto;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            overflow: hidden;
-            background: var(--surface);
-            transition: border-color 0.3s;
-        }
+      align-items: center;
+      gap: 32px;
+    }
 
-        .waitlist-form:focus-within {
-            border-color: var(--accent-border);
-        }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      justify-self: start;
 
-        .waitlist-form input {
-            flex: 1;
-            padding: 16px 20px;
-            background: transparent;
-            border: none;
-            color: var(--text-primary);
-            font-family: var(--sans);
-            font-size: 0.88rem;
-            outline: none;
-        }
+      text-decoration: none;
+    }
 
-        .waitlist-form input::placeholder {
-            color: var(--text-tertiary);
-        }
+    .brand img {
+      width: 156px;
+      max-height: 42px;
 
-        .waitlist-form button {
-            padding: 16px 28px;
-            background: var(--accent);
-            color: var(--bg);
-            border: none;
-            font-family: var(--sans);
-            font-size: 0.82rem;
-            font-weight: 600;
-            letter-spacing: 0.03em;
-            cursor: pointer;
-            transition: background 0.3s;
-            white-space: nowrap;
-        }
+      height: auto;
+      object-fit: contain;
+      object-position: left center;
+    }
 
-        .waitlist-form button:hover {
-            background: #d4b35c;
-        }
+    /* Desktop navigation */
 
-        .waitlist-note {
-            font-size: 0.72rem;
-            color: var(--text-tertiary);
-            margin-top: 14px;
-        }
+    .desktop-nav {
+      display: flex;
+      align-items: stretch;
 
-        .waitlist-success {
-            display: none;
-            padding: 16px 20px;
-            font-size: 0.88rem;
-            color: var(--accent);
-        }
+      gap: 30px;
+      min-height: 78px;
+    }
 
-        /* Separator */
-        .sep {
-            width: 40px;
-            height: 1px;
-            background: var(--accent-border);
-            margin: 32px auto;
-            opacity: 0;
-            animation: textIn 0.8s ease-out 1.0s forwards;
-        }
+    .nav-item {
+      position: relative;
 
-        /* Emotional line */
-        .emotional {
-            font-family: var(--serif);
-            font-size: 1.15rem;
-            font-weight: 400;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            letter-spacing: 0.01em;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: textIn 0.8s ease-out 1.1s forwards;
-        }
+      display: flex;
+      align-items: center;
+    }
 
-        /* Cambridge line */
-        .provenance {
-            font-size: 0.75rem;
-            color: var(--text-tertiary);
-            letter-spacing: 0.02em;
-            opacity: 0;
-            animation: textIn 0.8s ease-out 1.3s forwards;
-        }
+    .nav-trigger {
+      appearance: none;
 
-        /* ===== Footer ===== */
-        .footer {
-            padding: 32px 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      border: 0;
+      background: transparent;
 
-        .footer-left {
-            font-size: 0.7rem;
-            color: var(--text-tertiary);
-            letter-spacing: 0.02em;
-        }
+      height: 78px;
+      padding: 0;
 
-        .footer-right {
-            display: flex;
-            gap: 24px;
-        }
+      color: rgba(255, 255, 255, 0.88);
 
-        .footer-right a {
-            font-size: 0.72rem;
-            color: var(--text-tertiary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
+      font: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.035em;
 
-        .footer-right a:hover {
-            color: var(--text-secondary);
-        }
+      cursor: pointer;
+    }
 
-        /* ===== Responsive ===== */
-        @media (max-width: 640px) {
-            .topbar {
-                padding: 0 24px;
-                height: 60px;
-            }
+    .nav-trigger::after {
+      content: "";
 
-            .main {
-                padding: 60px 24px 0;
-            }
+      display: inline-block;
 
-            .content {
-                margin-top: 36px;
-            }
+      width: 5px;
+      height: 5px;
 
-            .headline {
-                font-size: 2.6rem;
-                margin-bottom: 40px;
-            }
+      margin-left: 9px;
 
-            .launch-date {
-                margin-bottom: 40px;
-            }
+      border-right: 1px solid currentColor;
+      border-bottom: 1px solid currentColor;
 
-            .waitlist-form {
-                flex-direction: column;
-                border-radius: 6px;
-            }
+      transform: rotate(45deg) translateY(-2px);
 
-            .waitlist-form input {
-                padding: 16px;
-                text-align: center;
-            }
+      opacity: 0.6;
+    }
 
-            .waitlist-form button {
-                padding: 16px;
-            }
+    .nav-trigger:hover,
+    .nav-trigger:focus-visible {
+      color: var(--white);
+    }
 
-            .footer {
-                padding: 24px;
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-            }
-        }
-    </style>
+    /* Dropdown */
+
+    .dropdown {
+      position: absolute;
+      top: calc(100% - 1px);
+      left: 50%;
+
+      width: 236px;
+
+      padding: 10px;
+
+      background: var(--white);
+
+      border: 1px solid var(--soft-line);
+
+      box-shadow:
+        0 18px 45px rgba(15, 27, 51, 0.12);
+
+      transform: translate(-50%, 8px);
+
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+
+      transition:
+        opacity 0.16s ease,
+        transform 0.16s ease,
+        visibility 0.16s;
+    }
+
+    .nav-item:hover .dropdown,
+    .nav-item:focus-within .dropdown,
+    .nav-item[data-open="true"] .dropdown {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+
+      transform: translate(-50%, 0);
+    }
+
+    .dropdown a {
+      display: block;
+
+      padding: 11px 12px;
+
+      color: var(--navy);
+
+      text-decoration: none;
+      font-size: 0.84rem;
+      line-height: 1.25;
+    }
+
+    .dropdown a:hover,
+    .dropdown a:focus-visible {
+      background: var(--off-white);
+      outline: none;
+    }
+
+    /* Primary header CTA */
+
+    .header-cta {
+      justify-self: end;
+
+      padding: 12px 17px;
+
+      color: var(--navy);
+      background: var(--white);
+
+      border: 1px solid rgba(255, 255, 255, 0.65);
+
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 700;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease;
+    }
+
+    .header-cta:hover,
+    .header-cta:focus-visible {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      background: var(--white);
+
+      border-bottom:
+        1px solid var(--soft-line);
+    }
+
+    .hero-inner {
+      max-width: 1080px;
+
+      padding:
+        clamp(104px, 13vw, 188px)
+        0
+        clamp(92px, 11vw, 152px);
+    }
+
+    .hero h1 {
+      max-width: 1050px;
+
+      margin: 0;
+
+      color: var(--navy);
+
+      font-size:
+        clamp(3rem, 6.2vw, 6.25rem);
+
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      font-weight: 620;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 46px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-height: 44px;
+
+      padding: 0 19px;
+
+      border:
+        1px solid var(--navy);
+
+      text-decoration: none;
+
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.025em;
+    }
+
+    .btn-primary {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .btn-primary:hover {
+      background: var(--navy-2);
+    }
+
+    .btn-secondary {
+      color: var(--navy);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      background: var(--off-white);
+    }
+
+    /* =========================================================
+       PRODUCT BENEFITS
+    ========================================================= */
+
+    .benefits {
+      padding:
+        clamp(90px, 10vw, 140px)
+        0;
+
+      background: var(--off-white);
+    }
+
+    .section-kicker {
+      margin: 0 0 22px;
+
+      color: var(--stone);
+
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .benefits h2,
+    .enterprise-close h2 {
+      margin: 0;
+
+      color: var(--navy);
+
+      font-size:
+        clamp(2.5rem, 4.7vw, 5rem);
+
+      line-height: 1;
+      letter-spacing: -0.045em;
+      font-weight: 620;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      gap: 0;
+
+      margin-top: 64px;
+
+      border-top:
+        1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+    .benefit {
+      min-width: 0;
+
+      padding:
+        28px
+        24px
+        34px;
+
+      border-right:
+        1px solid var(--line);
+    }
+
+    .benefit:first-child {
+      padding-left: 0;
+    }
+
+    .benefit:last-child {
+      padding-right: 0;
+      border-right: 0;
+    }
+
+    /* Image areas */
+
+    .benefit-media {
+      position: relative;
+
+      aspect-ratio: 4 / 3;
+
+      margin-bottom: 28px;
+
+      overflow: hidden;
+
+      background: #E8E5DE;
+    }
+
+    .benefit-media img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+    }
+
+    /*
+       Replace the placeholder blocks later with:
+
+       Person:
+       documentary/editorial real-world photography
+
+       Environment:
+       real Nigerian environment with restrained
+       intelligence/map treatment
+
+       Movement:
+       actual Ijeoma route/risk UI
+
+       Response:
+       actual Ijeoma operational/response state
+    */
+
+    .benefit-media::before,
+    .benefit-media::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      pointer-events: none;
+    }
+
+    .benefit-media::before {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(15, 27, 51, 0.03),
+          rgba(15, 27, 51, 0.12)
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent 0 42px,
+          rgba(15, 27, 51, 0.05) 42px 43px
+        );
+    }
+
+    .benefit-media::after {
+      inset:
+        auto
+        18px
+        16px;
+
+      color:
+        rgba(15, 27, 51, 0.62);
+
+      font-size: 0.66rem;
+      font-weight: 700;
+
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .person-visual::after {
+      content: "Editorial photography";
+    }
+
+    .environment-visual::after {
+      content: "Environment / intelligence";
+    }
+
+    .movement-visual::after {
+      content: "Product / route intelligence";
+    }
+
+    .response-visual::after {
+      content: "Product / response state";
+    }
+
+    .benefit h3 {
+      margin: 0 0 12px;
+
+      color: var(--navy);
+
+      font-size: 0.82rem;
+      font-weight: 750;
+      letter-spacing: 0.13em;
+
+      text-transform: uppercase;
+    }
+
+    .benefit p {
+      max-width: 26ch;
+
+      margin: 0;
+
+      color: #555C68;
+
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       MAJOR STATEMENT
+    ========================================================= */
+
+    .statement {
+      background: var(--white);
+
+      border-top:
+        1px solid var(--soft-line);
+
+      border-bottom:
+        1px solid var(--soft-line);
+    }
+
+    .statement-inner {
+      max-width: 1050px;
+
+      padding:
+        clamp(100px, 13vw, 176px)
+        0;
+    }
+
+    .statement p {
+      margin: 0;
+
+      color: var(--navy);
+
+      font-size:
+        clamp(2.25rem, 5.3vw, 5.7rem);
+
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      font-weight: 620;
+    }
+
+    /* =========================================================
+       CONSUMER / ENTERPRISE CLOSE
+    ========================================================= */
+
+    .enterprise-close {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .close-inner {
+      display: grid;
+
+      grid-template-columns:
+        1.05fr
+        0.95fr;
+
+      gap:
+        clamp(52px, 8vw, 120px);
+
+      align-items: end;
+
+      padding:
+        clamp(90px, 11vw, 148px)
+        0;
+    }
+
+    .consumer-close h2 {
+      color: var(--white);
+    }
+
+    .consumer-close p,
+    .enterprise-copy p {
+      max-width: 42ch;
+
+      margin: 22px 0 0;
+
+      color:
+        rgba(255, 255, 255, 0.64);
+
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+
+    .enterprise-copy {
+      padding-left:
+        clamp(32px, 5vw, 64px);
+
+      border-left:
+        1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .enterprise-copy h3 {
+      margin: 0;
+
+      font-size:
+        clamp(1.7rem, 3.2vw, 3.2rem);
+
+      line-height: 1.06;
+      letter-spacing: -0.035em;
+      font-weight: 590;
+    }
+
+    .close-actions {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 34px;
+    }
+
+    .btn-light {
+      color: var(--navy);
+      background: var(--white);
+
+      border-color: var(--white);
+    }
+
+    .btn-light:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+
+      min-height: 44px;
+
+      padding: 0 4px;
+
+      color:
+        rgba(255, 255, 255, 0.9);
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.38);
+
+      text-decoration: none;
+
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .site-footer {
+      background: #0B1529;
+
+      color:
+        rgba(255, 255, 255, 0.72);
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-main {
+      display: grid;
+
+      grid-template-columns:
+        1.25fr
+        1fr
+        1fr;
+
+      gap: 54px;
+
+      padding:
+        54px
+        0
+        40px;
+    }
+
+    .footer-logo img {
+      width: 148px;
+    }
+
+    .footer-label {
+      margin: 0 0 16px;
+
+      color:
+        rgba(255, 255, 255, 0.4);
+
+      font-size: 0.67rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap:
+        11px
+        24px;
+    }
+
+    .footer-links a {
+      color:
+        rgba(255, 255, 255, 0.72);
+
+      text-decoration: none;
+
+      font-size: 0.8rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      padding:
+        20px
+        0
+        30px;
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.08);
+
+      color:
+        rgba(255, 255, 255, 0.35);
+
+      font-size: 0.7rem;
+    }
+
+    /* =========================================================
+       MOBILE NAVIGATION
+    ========================================================= */
+
+    .mobile-panel {
+      display: none;
+    }
+
+    @media (max-width: 980px) {
+
+      .shell {
+        width:
+          min(
+            calc(100% - 40px),
+            var(--max-width)
+          );
+      }
+
+      .header-inner {
+        min-height: 68px;
+
+        grid-template-columns:
+          1fr
+          auto;
+      }
+
+      .desktop-nav,
+      .header-cta {
+        display: none;
+      }
+
+      .brand img {
+        width: 132px;
+      }
+
+      .menu-toggle {
+        position: relative;
+
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 44px;
+        height: 44px;
+
+        padding: 0;
+
+        color: var(--white);
+        background: transparent;
+
+        border:
+          1px solid rgba(255, 255, 255, 0.22);
+
+        cursor: pointer;
+      }
+
+      .menu-toggle span,
+      .menu-toggle::before,
+      .menu-toggle::after {
+        content: "";
+
+        position: absolute;
+
+        display: block;
+
+        width: 17px;
+        height: 1px;
+
+        background: currentColor;
+      }
+
+      .menu-toggle::before {
+        transform: translateY(-5px);
+      }
+
+      .menu-toggle::after {
+        transform: translateY(5px);
+      }
+
+      .menu-toggle[aria-expanded="true"] span {
+        opacity: 0;
+      }
+
+      .menu-toggle[aria-expanded="true"]::before {
+        transform: rotate(45deg);
+      }
+
+      .menu-toggle[aria-expanded="true"]::after {
+        transform: rotate(-45deg);
+      }
+
+      .mobile-panel {
+        display: none;
+
+        padding:
+          12px
+          0
+          24px;
+
+        border-top:
+          1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .mobile-panel[data-open="true"] {
+        display: block;
+      }
+
+      .mobile-group {
+        border-bottom:
+          1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .mobile-group button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+
+        padding:
+          17px
+          0;
+
+        border: 0;
+
+        color: var(--white);
+        background: transparent;
+
+        font: inherit;
+        font-size: 0.86rem;
+        font-weight: 650;
+
+        text-align: left;
+      }
+
+      .mobile-group button::after {
+        content: "+";
+
+        color:
+          rgba(255, 255, 255, 0.55);
+
+        font-size: 1.15rem;
+        font-weight: 400;
+      }
+
+      .mobile-group[data-open="true"]
+      button::after {
+        content: "−";
+      }
+
+      .mobile-links {
+        display: none;
+
+        padding:
+          0
+          0
+          14px;
+      }
+
+      .mobile-group[data-open="true"]
+      .mobile-links {
+        display: grid;
+      }
+
+      .mobile-links a {
+        padding:
+          10px
+          0;
+
+        color:
+          rgba(255, 255, 255, 0.62);
+
+        text-decoration: none;
+
+        font-size: 0.84rem;
+      }
+
+      .mobile-get {
+        display: inline-flex;
+
+        margin-top: 20px;
+
+        padding:
+          12px
+          16px;
+
+        color: var(--navy);
+        background: var(--white);
+
+        text-decoration: none;
+
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+
+      .benefit-grid {
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .benefit:nth-child(2) {
+        padding-right: 0;
+        border-right: 0;
+      }
+
+      .benefit:nth-child(3) {
+        padding-left: 0;
+        border-top:
+          1px solid var(--line);
+      }
+
+      .benefit:nth-child(4) {
+        border-top:
+          1px solid var(--line);
+      }
+
+      .close-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .enterprise-copy {
+        padding:
+          42px
+          0
+          0;
+
+        border-left: 0;
+
+        border-top:
+          1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .footer-main {
+        grid-template-columns:
+          1fr
+          1fr;
+      }
+
+      .footer-logo {
+        grid-column:
+          1 / -1;
+      }
+    }
+
+    @media (max-width: 620px) {
+
+      .shell {
+        width:
+          min(
+            calc(100% - 32px),
+            var(--max-width)
+          );
+      }
+
+      .hero-inner {
+        padding-top: 88px;
+        padding-bottom: 86px;
+      }
+
+      .hero h1 {
+        font-size:
+          clamp(
+            2.65rem,
+            13vw,
+            4.25rem
+          );
+      }
+
+      .hero-actions {
+        margin-top: 34px;
+
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .benefit-grid {
+        display: block;
+      }
+
+      .benefit,
+      .benefit:first-child,
+      .benefit:last-child,
+      .benefit:nth-child(2),
+      .benefit:nth-child(3),
+      .benefit:nth-child(4) {
+        padding:
+          26px
+          0
+          34px;
+
+        border-right: 0;
+
+        border-top:
+          1px solid var(--line);
+      }
+
+      .benefit:first-child {
+        border-top: 0;
+      }
+
+      .statement p {
+        font-size:
+          clamp(
+            2.2rem,
+            12vw,
+            4rem
+          );
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+
+        gap: 34px;
+      }
+
+      .footer-logo {
+        grid-column: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="topbar">
-    <a href="#" class="logo">
-        <div class="logo-mark">
-            <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-                <rect width="128" height="128" rx="28" fill="#0c1018"/>
-                <circle cx="64" cy="36" r="22" fill="none" stroke="#c8a44e" stroke-width="3" opacity="0.25"/>
-                <circle cx="64" cy="36" r="16" fill="none" stroke="#c8a44e" stroke-width="3.5" opacity="0.45"/>
-                <circle cx="64" cy="36" r="8" fill="#c8a44e"/>
-                <rect x="54" y="52" width="20" height="46" rx="4" fill="#c8a44e"/>
-            </svg>
+  <!-- =======================================================
+       HEADER
+  ======================================================== -->
+
+  <header class="site-header">
+
+    <div class="shell">
+
+      <div class="header-inner">
+
+        <!-- Logo -->
+        <a
+          class="brand"
+          href="index.html"
+          aria-label="Ijeoma home"
+        >
+          <!-- Replace with approved reversed logo -->
+          <img
+            src="assets/ijeoma-logo-reversed.png"
+            alt="Ijeoma"
+          >
+        </a>
+
+        <!-- Desktop navigation -->
+        <nav
+          class="desktop-nav"
+          aria-label="Primary navigation"
+        >
+
+          <!-- Product -->
+          <div class="nav-item">
+
+            <button
+              class="nav-trigger"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Product
+            </button>
+
+            <div class="dropdown">
+
+              <a href="ijeoma.html">
+                Ijeoma
+              </a>
+
+              <a href="haske.html">
+                Haske
+              </a>
+
+              <a href="enterprise.html">
+                Ijeoma Enterprise
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Solutions -->
+          <div class="nav-item">
+
+            <button
+              class="nav-trigger"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Solutions
+            </button>
+
+            <div class="dropdown">
+
+              <a href="individuals.html">
+                Individuals
+              </a>
+
+              <a href="extractives.html">
+                Extractives
+              </a>
+
+              <a href="media.html">
+                Media
+              </a>
+
+              <a href="ngo.html">
+                NGO
+              </a>
+
+              <a href="security.html">
+                Security
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Intelligence -->
+          <div class="nav-item">
+
+            <button
+              class="nav-trigger"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Intelligence
+            </button>
+
+            <div class="dropdown">
+
+              <a href="intelligence-briefs.html">
+                Intelligence Briefs
+              </a>
+
+              <a href="podcast.html">
+                Podcast
+              </a>
+
+              <a href="blog.html">
+                Blog
+              </a>
+
+              <a href="case-studies.html">
+                Case Studies
+              </a>
+
+            </div>
+          </div>
+
+          <!-- Company -->
+          <div class="nav-item">
+
+            <button
+              class="nav-trigger"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Company
+            </button>
+
+            <div class="dropdown">
+
+              <a href="about.html">
+                About Us
+              </a>
+
+              <a href="careers.html">
+                Careers
+              </a>
+
+              <a href="contact.html">
+                Contact Us
+              </a>
+
+              <a href="news.html">
+                Company News
+              </a>
+
+            </div>
+          </div>
+
+        </nav>
+
+        <!--
+          Recommendation:
+          Keep "Get Ijeoma" as the consumer route.
+
+          Enterprise consultation/demo uses
+          the separate Enterprise CTA.
+        -->
+        <a
+          class="header-cta"
+          href="ijeoma.html"
+        >
+          Get Ijeoma
+        </a>
+
+        <!-- Mobile menu toggle -->
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+        </button>
+
+      </div>
+
+      <!-- =====================================================
+           MOBILE NAVIGATION
+      ====================================================== -->
+
+      <nav
+        class="mobile-panel"
+        aria-label="Mobile navigation"
+      >
+
+        <div class="mobile-group">
+
+          <button type="button">
+            Product
+          </button>
+
+          <div class="mobile-links">
+
+            <a href="ijeoma.html">
+              Ijeoma
+            </a>
+
+            <a href="haske.html">
+              Haske
+            </a>
+
+            <a href="enterprise.html">
+              Ijeoma Enterprise
+            </a>
+
+          </div>
+
         </div>
-        <span class="logo-text">Ijeoma</span>
-    </a>
-    <div class="topbar-right">
-        <a href="mailto:info@ijeomaintelligence.com">For Organisations</a>
-    </div>
-</div>
 
-<main class="main">
-    <div class="content">
+        <div class="mobile-group">
 
-        <h1 class="headline">Security that <em>moves</em><br>with you.</h1>
+          <button type="button">
+            Solutions
+          </button>
 
-        <div class="launch-date">Launching September, 2026</div>
+          <div class="mobile-links">
 
-        <div class="waitlist">
-            <form class="waitlist-form" id="waitlistForm" action="https://formspree.io/f/maqpdrqn" method="POST">
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <input type="hidden" name="source" value="waitlist">
-                <button type="submit">Join</button>
-            </form>
-            <div class="waitlist-success" id="waitlistSuccess">Thank you. We'll be in touch.</div>
-            <p class="waitlist-note">Be the first to know when Ijeoma launches.</p>
+            <a href="individuals.html">
+              Individuals
+            </a>
+
+            <a href="extractives.html">
+              Extractives
+            </a>
+
+            <a href="media.html">
+              Media
+            </a>
+
+            <a href="ngo.html">
+              NGO
+            </a>
+
+            <a href="security.html">
+              Security
+            </a>
+
+          </div>
+
         </div>
 
-        <div class="sep"></div>
+        <div class="mobile-group">
 
-        <p class="emotional">Built for the realities of movement in Nigeria.</p>
+          <button type="button">
+            Intelligence
+          </button>
 
-        <p class="provenance">Inspired by research at Cambridge analysing 20 years of security incident data.</p>
+          <div class="mobile-links">
+
+            <a href="intelligence-briefs.html">
+              Intelligence Briefs
+            </a>
+
+            <a href="podcast.html">
+              Podcast
+            </a>
+
+            <a href="blog.html">
+              Blog
+            </a>
+
+            <a href="case-studies.html">
+              Case Studies
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="mobile-group">
+
+          <button type="button">
+            Company
+          </button>
+
+          <div class="mobile-links">
+
+            <a href="about.html">
+              About Us
+            </a>
+
+            <a href="careers.html">
+              Careers
+            </a>
+
+            <a href="contact.html">
+              Contact Us
+            </a>
+
+            <a href="news.html">
+              Company News
+            </a>
+
+          </div>
+
+        </div>
+
+        <a
+          class="mobile-get"
+          href="ijeoma.html"
+        >
+          Get Ijeoma
+        </a>
+
+      </nav>
 
     </div>
-</main>
 
-<footer class="footer">
-    <div class="footer-left">&copy; 2026 Ijeoma Intelligence Ltd.</div>
-    <div class="footer-right">
-        <a href="careers.html">Careers</a>
-        <a href="mailto:info@ijeomaintelligence.com">Contact</a>
+  </header>
+
+  <!-- =======================================================
+       MAIN CONTENT
+  ======================================================== -->
+
+  <main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="shell">
+
+        <div class="hero-inner">
+
+          <h1>
+            Safety Intelligence built around people,
+            movement, and changing risk environments.
+          </h1>
+
+          <div
+            class="hero-actions"
+            aria-label="Primary actions"
+          >
+
+            <a
+              class="btn btn-primary"
+              href="ijeoma.html"
+            >
+              Get Ijeoma
+            </a>
+
+            <a
+              class="btn btn-secondary"
+              href="enterprise.html#consultation"
+            >
+              Ijeoma Enterprise
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         PRODUCT BENEFITS
+    ====================================================== -->
+
+    <section
+      class="benefits"
+      aria-labelledby="benefits-title"
+    >
+
+      <div class="shell">
+
+        <p class="section-kicker">
+          Product benefits
+        </p>
+
+        <h2 id="benefits-title">
+          Risk is not static.
+          <br>
+          Neither is Ijeoma.
+        </h2>
+
+        <div class="benefit-grid">
+
+          <!-- Person -->
+
+          <article class="benefit">
+
+            <div
+              class="benefit-media person-visual"
+              aria-hidden="true"
+            ></div>
+
+            <h3>
+              Person
+            </h3>
+
+            <p>
+              Intelligence shaped around the individual.
+            </p>
+
+          </article>
+
+          <!-- Environment -->
+
+          <article class="benefit">
+
+            <div
+              class="benefit-media environment-visual"
+              aria-hidden="true"
+            ></div>
+
+            <h3>
+              Environment
+            </h3>
+
+            <p>
+              Understand what is happening around you.
+            </p>
+
+          </article>
+
+          <!-- Movement -->
+
+          <article class="benefit">
+
+            <div
+              class="benefit-media movement-visual"
+              aria-hidden="true"
+            ></div>
+
+            <h3>
+              Movement
+            </h3>
+
+            <p>
+              Risk changes as you move.
+              Ijeoma follows that change.
+            </p>
+
+          </article>
+
+          <!-- Response -->
+
+          <article class="benefit">
+
+            <div
+              class="benefit-media response-visual"
+              aria-hidden="true"
+            ></div>
+
+            <h3>
+              Response
+            </h3>
+
+            <p>
+              When circumstances change,
+              Ijeoma can verify and respond.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         MAJOR BRAND STATEMENT
+    ====================================================== -->
+
+    <section class="statement">
+
+      <div class="shell">
+
+        <div class="statement-inner">
+
+          <p>
+            Intelligence built around the individual
+            within a changing risk environment.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =====================================================
+         INDIVIDUAL / ENTERPRISE CLOSE
+    ====================================================== -->
+
+    <section class="enterprise-close">
+
+      <div class="shell">
+
+        <div class="close-inner">
+
+          <!-- Consumer -->
+
+          <div class="consumer-close">
+
+            <p
+              class="section-kicker"
+              style="color: rgba(255,255,255,.42);"
+            >
+              For individuals
+            </p>
+
+            <h2>
+              Ijeoma watches your back.
+            </h2>
+
+            <div class="close-actions">
+
+              <a
+                class="text-link"
+                href="ijeoma.html"
+              >
+                Get Ijeoma
+              </a>
+
+            </div>
+
+          </div>
+
+          <!-- Enterprise -->
+
+          <div class="enterprise-copy">
+
+            <p
+              class="section-kicker"
+              style="color: rgba(255,255,255,.42);"
+            >
+              For organisations
+            </p>
+
+            <h3>
+              Build situational awareness
+              around your people.
+            </h3>
+
+            <p>
+              Explore how Ijeoma Enterprise
+              can support people operating
+              across changing and uncertain
+              risk environments.
+            </p>
+
+            <div class="close-actions">
+
+              <a
+                class="btn btn-light"
+                href="enterprise.html#consultation"
+              >
+                Request Ijeoma Enterprise Demo
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="shell">
+
+      <div class="footer-main">
+
+        <!-- Logo -->
+
+        <div class="footer-logo">
+
+          <a
+            href="index.html"
+            aria-label="Ijeoma home"
+          >
+
+            <img
+              src="assets/ijeoma-logo-reversed.png"
+              alt="Ijeoma"
+            >
+
+          </a>
+
+        </div>
+
+        <!-- Legal / trust -->
+
+        <div>
+
+          <p class="footer-label">
+            Legal &amp; trust
+          </p>
+
+          <div class="footer-links">
+
+            <a href="terms.html">
+              Terms &amp; Conditions
+            </a>
+
+            <a href="privacy.html">
+              Privacy Policy
+            </a>
+
+            <a href="security.html">
+              Security
+            </a>
+
+            <a href="disclosure.html">
+              Disclosure Policy
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- Social/contact -->
+
+        <div>
+
+          <p class="footer-label">
+            Get in touch
+          </p>
+
+          <div class="footer-links">
+
+            <a href="contact.html">
+              Contact
+            </a>
+
+            <!-- Replace # with real company URLs -->
+
+            <a
+              href="#"
+              rel="noopener"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              href="#"
+              rel="noopener"
+            >
+              Instagram
+            </a>
+
+            <a
+              href="#"
+              rel="noopener"
+            >
+              Facebook
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        &copy; 2026 Ijeoma Intelligence Ltd.
+      </div>
+
     </div>
-</footer>
 
-<script>
-    document.getElementById('waitlistForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var form = this;
-        var data = new FormData(form);
-        fetch(form.action, {
-            method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
-        }).then(function(response) {
-            if (response.ok) {
-                form.style.display = 'none';
-                document.getElementById('waitlistSuccess').style.display = 'block';
-                document.querySelector('.waitlist-note').style.display = 'none';
+  </footer>
+
+  <!-- =======================================================
+       NAVIGATION SCRIPT
+  ======================================================== -->
+
+  <script>
+    (function () {
+
+      /*
+       * Desktop dropdown navigation
+       */
+
+      const navItems =
+        document.querySelectorAll(".nav-item");
+
+      const triggers =
+        document.querySelectorAll(".nav-trigger");
+
+      triggers.forEach(function (trigger) {
+
+        trigger.addEventListener(
+          "click",
+          function () {
+
+            const item =
+              trigger.closest(".nav-item");
+
+            const isOpen =
+              item.getAttribute("data-open")
+              === "true";
+
+            /*
+             * Close all menus first.
+             */
+
+            navItems.forEach(function (other) {
+
+              other.removeAttribute(
+                "data-open"
+              );
+
+              const otherTrigger =
+                other.querySelector(
+                  ".nav-trigger"
+                );
+
+              if (otherTrigger) {
+                otherTrigger.setAttribute(
+                  "aria-expanded",
+                  "false"
+                );
+              }
+
+            });
+
+            /*
+             * Open current menu if
+             * it was previously closed.
+             */
+
+            if (!isOpen) {
+
+              item.setAttribute(
+                "data-open",
+                "true"
+              );
+
+              trigger.setAttribute(
+                "aria-expanded",
+                "true"
+              );
+
             }
-        }).catch(function() {
-            form.style.display = 'none';
-            document.getElementById('waitlistSuccess').style.display = 'block';
-            document.querySelector('.waitlist-note').style.display = 'none';
-        });
-    });
-</script>
+
+          }
+        );
+
+      });
+
+      /*
+       * Clicking outside closes menus.
+       */
+
+      document.addEventListener(
+        "click",
+        function (event) {
+
+          if (
+            !event.target.closest(".nav-item")
+          ) {
+
+            navItems.forEach(
+              function (item) {
+
+                item.removeAttribute(
+                  "data-open"
+                );
+
+                const trigger =
+                  item.querySelector(
+                    ".nav-trigger"
+                  );
+
+                if (trigger) {
+
+                  trigger.setAttribute(
+                    "aria-expanded",
+                    "false"
+                  );
+
+                }
+
+              }
+            );
+
+          }
+
+        }
+      );
+
+      /*
+       * Mobile navigation
+       */
+
+      const menuToggle =
+        document.querySelector(
+          ".menu-toggle"
+        );
+
+      const mobilePanel =
+        document.querySelector(
+          ".mobile-panel"
+        );
+
+      menuToggle.addEventListener(
+        "click",
+        function () {
+
+          const open =
+            menuToggle.getAttribute(
+              "aria-expanded"
+            ) === "true";
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            String(!open)
+          );
+
+          mobilePanel.setAttribute(
+            "data-open",
+            String(!open)
+          );
+
+          menuToggle.setAttribute(
+            "aria-label",
+            open
+              ? "Open navigation"
+              : "Close navigation"
+          );
+
+        }
+      );
+
+      /*
+       * Mobile accordion groups
+       */
+
+      document
+        .querySelectorAll(
+          ".mobile-group > button"
+        )
+        .forEach(
+          function (button) {
+
+            button.addEventListener(
+              "click",
+              function () {
+
+                const group =
+                  button.closest(
+                    ".mobile-group"
+                  );
+
+                const open =
+                  group.getAttribute(
+                    "data-open"
+                  ) === "true";
+
+                group.setAttribute(
+                  "data-open",
+                  String(!open)
+                );
+
+              }
+            );
+
+          }
+        );
+
+    })();
+  </script>
 
 </body>
 </html>
