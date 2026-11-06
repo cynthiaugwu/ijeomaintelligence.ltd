@@ -1640,92 +1640,61 @@
     .form-submit:hover {
       background: var(--navy-2);
     }
-
-    .contact-secondary {
+    .contact-social {
       background: var(--white);
       border-top: 1px solid var(--soft-line);
     }
 
-    .contact-secondary-inner {
-      padding: clamp(78px, 9vw, 116px) 0;
-    }
-
-    .contact-secondary-head {
-      display: grid;
-      grid-template-columns: .72fr 1.28fr;
-      gap: clamp(52px, 8vw, 116px);
-      align-items: end;
-      margin-bottom: 44px;
-    }
-
-    .contact-secondary-head h2 {
-      margin: 0;
-      color: var(--navy);
-      font-size: clamp(2.35rem, 4vw, 4.2rem);
-      line-height: 1.02;
-      letter-spacing: -.044em;
-      font-weight: 620;
-    }
-
-    .contact-secondary-head p {
-      max-width: 570px;
-      margin: 0;
-      color: #626977;
-      font-size: .96rem;
-      line-height: 1.7;
-    }
-
-    .contact-channel-list {
-      border-top: 1px solid var(--line);
-    }
-
-    .contact-channel-row {
-      display: grid;
-      grid-template-columns: minmax(150px, .55fr) minmax(0, 1.2fr) auto;
-      gap: clamp(28px, 5vw, 74px);
+    .contact-social-inner {
+      display: flex;
       align-items: center;
-      min-height: 100px;
-      padding: 22px 0;
-      border-bottom: 1px solid var(--line);
+      justify-content: center;
+      gap: 18px;
+      padding: 36px 0;
     }
 
-    .contact-channel-name {
-      color: var(--navy);
-      font-size: .96rem;
-      font-weight: 750;
-    }
-
-    .contact-channel-copy {
-      margin: 0;
-      color: #626977;
-      font-size: .9rem;
-      line-height: 1.6;
-    }
-
-    .contact-channel-link {
+    .social-icon-link {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
       color: var(--navy);
+      background: var(--white);
+      border: 1px solid var(--line);
       text-decoration: none;
-      font-size: .78rem;
-      font-weight: 750;
-      border-bottom: 1px solid rgba(15,27,51,.25);
-      padding-bottom: 3px;
-      white-space: nowrap;
+      transition:
+        color .16s ease,
+        border-color .16s ease,
+        background .16s ease,
+        transform .16s ease;
     }
 
-    .contact-channel-link::after {
-      content: "↗";
-      color: var(--gold);
-    }
-
-    .contact-channel-link:hover,
-    .contact-channel-link:focus-visible {
+    .social-icon-link:hover,
+    .social-icon-link:focus-visible {
       color: #765C20;
-      border-bottom-color: var(--gold);
+      border-color: var(--gold);
+      background: var(--off-white);
+      transform: translateY(-1px);
       outline: none;
     }
+
+    .social-icon-link svg {
+      width: 21px;
+      height: 21px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .social-icon-link svg .fill-dot {
+      fill: currentColor;
+      stroke: none;
+    }
+
+
 
     .contact-company-note {
       background: var(--navy);
@@ -1765,7 +1734,6 @@
 
     @media (max-width: 980px) {
       .contact-main-grid,
-      .contact-secondary-head,
       .contact-company-note-inner {
         grid-template-columns: 1fr;
         gap: 38px;
@@ -1773,11 +1741,6 @@
 
       .contact-context {
         position: static;
-      }
-
-      .contact-channel-row {
-        grid-template-columns: 130px 1fr auto;
-        gap: 24px;
       }
     }
 
@@ -1808,18 +1771,6 @@
 
       .inquiry-option:nth-child(n+2) {
         border-top: 1px solid var(--line);
-      }
-
-      .contact-channel-row {
-        grid-template-columns: 1fr;
-        gap: 9px;
-        min-height: 0;
-        padding: 24px 0 28px;
-      }
-
-      .contact-channel-link {
-        justify-self: start;
-        margin-top: 4px;
       }
     }
 
@@ -2283,51 +2234,42 @@
       </div>
     </section>
 
-    <section class="contact-secondary" aria-labelledby="other-contact-title">
+    <section class="contact-social" aria-label="Official contact channels">
       <div class="shell">
-        <div class="contact-secondary-inner">
+        <div class="contact-social-inner">
 
-          <div class="contact-secondary-head">
-            <div>
-              <p class="contact-kicker">Other ways to get in touch</p>
-              <h2 id="other-contact-title">Official company channels.</h2>
-            </div>
-            <p>
-              Follow Ijeoma Intelligence or contact us through our official company accounts.
-            </p>
-          </div>
+          <!-- Replace placeholder href values with official company links. -->
+          <a class="social-icon-link" href="#" aria-label="Email Ijeoma Intelligence">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 5.5h18v13H3z"></path>
+              <path d="m4 7 8 6 8-6"></path>
+            </svg>
+          </a>
 
-          <div class="contact-channel-list">
+          <a class="social-icon-link" href="#" rel="noopener" aria-label="Ijeoma Intelligence on LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="3.5" width="17" height="17"></rect>
+              <path d="M7.3 10v7"></path>
+              <circle cx="7.3" cy="7.2" r=".9"></circle>
+              <path d="M11.2 17v-7"></path>
+              <path d="M11.2 13.1c.8-2.2 5.5-2.4 5.5 1V17"></path>
+            </svg>
+          </a>
 
-            <div class="contact-channel-row">
-              <div class="contact-channel-name">Email</div>
-              <p class="contact-channel-copy">General company correspondence and formal enquiries.</p>
-              <!-- Replace # with the official mailto: link. -->
-              <a class="contact-channel-link" href="#">Email</a>
-            </div>
+          <a class="social-icon-link" href="#" rel="noopener" aria-label="Ijeoma Intelligence on Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="3.5" width="17" height="17" rx="4"></rect>
+              <circle cx="12" cy="12" r="4"></circle>
+              <circle cx="17.3" cy="6.8" r=".8" class="fill-dot"></circle>
+            </svg>
+          </a>
 
-            <div class="contact-channel-row">
-              <div class="contact-channel-name">LinkedIn</div>
-              <p class="contact-channel-copy">Company, institutional and professional updates.</p>
-              <!-- Replace # with official company URL. -->
-              <a class="contact-channel-link" href="#" rel="noopener">LinkedIn</a>
-            </div>
-
-            <div class="contact-channel-row">
-              <div class="contact-channel-name">Instagram</div>
-              <p class="contact-channel-copy">Product and company updates.</p>
-              <!-- Replace # with official company URL. -->
-              <a class="contact-channel-link" href="#" rel="noopener">Instagram</a>
-            </div>
-
-            <div class="contact-channel-row">
-              <div class="contact-channel-name">Facebook</div>
-              <p class="contact-channel-copy">Public company and community-facing updates.</p>
-              <!-- Replace # with official company URL. -->
-              <a class="contact-channel-link" href="#" rel="noopener">Facebook</a>
-            </div>
-
-          </div>
+          <a class="social-icon-link" href="#" rel="noopener" aria-label="Ijeoma Intelligence on Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.5"></circle>
+              <path d="M13.4 8.6h2.1V5.8h-2.1c-2.7 0-4.1 1.6-4.1 4.2v1.6H7v2.8h2.3v5h3.1v-5H15l.5-2.8h-3.1v-1.2c0-1.2.4-1.8 1-1.8Z"></path>
+            </svg>
+          </a>
 
         </div>
       </div>
