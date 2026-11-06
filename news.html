@@ -1761,6 +1761,10 @@
       border-bottom: 1px solid var(--line);
     }
 
+    .news-card[hidden] {
+      display: none !important;
+    }
+
     .news-card-meta {
       color: #7A808C;
       font-size: .76rem;
@@ -2529,6 +2533,7 @@
               card.getAttribute("data-category") === selected;
 
             card.hidden = !show;
+            card.style.display = show ? "grid" : "none";
             if (show) visible += 1;
           });
 
