@@ -1348,152 +1348,169 @@
     }
 
     /* =========================================================
-       CONTACT — ENTERPRISE CONTACT EXPERIENCE
+       CONTACT — RESTRAINED ENTERPRISE UTILITY PAGE
     ========================================================= */
 
-    .contact-hero {
+    .contact-page {
       background: var(--white);
       border-bottom: 1px solid var(--soft-line);
     }
 
-    .contact-hero-inner {
-      max-width: 960px;
-      padding:
-        clamp(92px, 11vw, 148px)
-        0
-        clamp(70px, 8vw, 104px);
-    }
-
-    .contact-eyebrow,
-    .contact-kicker {
-      margin: 0 0 22px;
-      color: var(--stone);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .contact-hero h1 {
-      max-width: 880px;
-      margin: 0;
-      color: var(--navy);
-      font-size: clamp(3rem, 5.7vw, 5.8rem);
-      line-height: .99;
-      letter-spacing: -.052em;
-      font-weight: 620;
-    }
-
-    .contact-hero p {
-      max-width: 680px;
-      margin: 30px 0 0;
-      color: #555C68;
-      font-size: 1.04rem;
-      line-height: 1.72;
-    }
-
-    .contact-main {
-      padding: clamp(78px, 9vw, 118px) 0;
-      background: var(--off-white);
-    }
-
-    .contact-main-grid {
+    .contact-page-inner {
       display: grid;
-      grid-template-columns: minmax(260px, .7fr) minmax(0, 1.3fr);
-      gap: clamp(56px, 8vw, 118px);
+      grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
+      gap: clamp(54px, 8vw, 112px);
       align-items: start;
+      padding:
+        clamp(72px, 8vw, 108px)
+        0
+        clamp(78px, 9vw, 118px);
     }
 
-    .contact-context {
+    .contact-intro {
       position: sticky;
       top: 112px;
     }
 
-    .contact-context h2 {
-      max-width: 430px;
+    .contact-eyebrow {
+      margin: 0 0 18px;
+      color: var(--stone);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .contact-intro h1 {
+      max-width: 440px;
       margin: 0;
       color: var(--navy);
-      font-size: clamp(2.1rem, 3.5vw, 3.7rem);
-      line-height: 1.03;
-      letter-spacing: -.042em;
+      font-size: clamp(2rem, 3vw, 3.15rem);
+      line-height: 1.04;
+      letter-spacing: -.038em;
       font-weight: 620;
     }
 
-    .contact-context p {
-      max-width: 420px;
+    .contact-intro > p {
+      max-width: 430px;
       margin: 24px 0 0;
-      color: #5B6270;
+      color: #59616F;
       font-size: .98rem;
       line-height: 1.72;
     }
 
-    .contact-context-rule {
-      margin: 36px 0 0;
+    .contact-direct {
+      margin-top: 34px;
       padding-top: 26px;
       border-top: 1px solid var(--line);
     }
 
-    .contact-context-rule strong {
-      display: block;
-      margin-bottom: 9px;
+    .contact-direct-label {
+      margin: 0 0 12px;
       color: var(--navy);
-      font-size: .77rem;
+      font-size: .75rem;
+      font-weight: 750;
       letter-spacing: .04em;
       text-transform: uppercase;
     }
 
-    .contact-context-rule span {
-      display: block;
+    .contact-direct p {
       max-width: 400px;
-      color: #6B7280;
-      font-size: .88rem;
-      line-height: 1.6;
+      margin: 0;
+      color: #6A7180;
+      font-size: .86rem;
+      line-height: 1.62;
+    }
+
+    .contact-social-inline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .social-icon-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      color: var(--navy);
+      background: var(--white);
+      border: 1px solid var(--line);
+      text-decoration: none;
+      transition:
+        color .16s ease,
+        border-color .16s ease,
+        background .16s ease;
+    }
+
+    .social-icon-link:hover,
+    .social-icon-link:focus-visible {
+      color: #765C20;
+      border-color: var(--gold);
+      background: var(--off-white);
+      outline: none;
+    }
+
+    .social-icon-link svg {
+      width: 19px;
+      height: 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .social-icon-link svg .fill-dot {
+      fill: currentColor;
+      stroke: none;
     }
 
     .contact-form-shell {
       background: var(--white);
-      border: 1px solid var(--soft-line);
-      box-shadow: 0 22px 58px rgba(15,27,51,.06);
+      border: 1px solid var(--line);
     }
 
     .contact-form-head {
-      padding: 32px 34px 28px;
+      padding: 28px 30px 24px;
       border-bottom: 1px solid var(--soft-line);
     }
 
     .contact-form-head h2 {
       margin: 0;
       color: var(--navy);
-      font-size: 1.45rem;
-      line-height: 1.2;
-      letter-spacing: -.025em;
+      font-size: 1.2rem;
+      line-height: 1.3;
+      letter-spacing: -.018em;
       font-weight: 650;
     }
 
     .contact-form-head p {
-      max-width: 610px;
-      margin: 10px 0 0;
+      max-width: 620px;
+      margin: 8px 0 0;
       color: #6A7180;
-      font-size: .9rem;
-      line-height: 1.6;
+      font-size: .86rem;
+      line-height: 1.58;
     }
 
     .contact-form {
-      padding: 32px 34px 36px;
+      padding: 28px 30px 32px;
     }
 
     .inquiry-group {
-      margin: 0 0 34px;
+      margin: 0 0 30px;
       padding: 0;
       border: 0;
     }
 
     .inquiry-group legend {
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       color: var(--navy);
-      font-size: .76rem;
+      font-size: .74rem;
       font-weight: 750;
-      letter-spacing: .06em;
+      letter-spacing: .05em;
       text-transform: uppercase;
     }
 
@@ -1524,12 +1541,12 @@
 
     .inquiry-option label {
       display: flex;
-      min-height: 72px;
+      min-height: 62px;
       align-items: center;
-      padding: 17px 18px;
+      padding: 14px 16px;
       color: var(--navy);
       background: var(--white);
-      font-size: .88rem;
+      font-size: .82rem;
       font-weight: 650;
       line-height: 1.35;
       cursor: pointer;
@@ -1549,7 +1566,7 @@
     .form-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px 24px;
+      gap: 20px 22px;
     }
 
     .form-field {
@@ -1562,9 +1579,9 @@
 
     .form-field label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 7px;
       color: var(--navy);
-      font-size: .78rem;
+      font-size: .75rem;
       font-weight: 700;
     }
 
@@ -1572,20 +1589,20 @@
     .form-field select,
     .form-field textarea {
       width: 100%;
-      min-height: 48px;
-      padding: 12px 13px;
+      min-height: 46px;
+      padding: 11px 12px;
       color: var(--ink);
       background: var(--white);
       border: 1px solid #CFCBC2;
       border-radius: 0;
       font: inherit;
-      font-size: .92rem;
+      font-size: .9rem;
       outline: none;
       transition: border-color .16s ease, box-shadow .16s ease;
     }
 
     .form-field textarea {
-      min-height: 144px;
+      min-height: 132px;
       resize: vertical;
       line-height: 1.55;
     }
@@ -1594,7 +1611,7 @@
     .form-field select:focus,
     .form-field textarea:focus {
       border-color: var(--navy);
-      box-shadow: 0 0 0 2px rgba(15,27,51,.08);
+      box-shadow: 0 0 0 2px rgba(15,27,51,.07);
     }
 
     .form-consent {
@@ -1602,10 +1619,10 @@
       grid-template-columns: 18px 1fr;
       gap: 10px;
       align-items: start;
-      margin-top: 22px;
+      margin-top: 20px;
       color: #6A7180;
-      font-size: .76rem;
-      line-height: 1.55;
+      font-size: .74rem;
+      line-height: 1.52;
     }
 
     .form-consent input {
@@ -1623,14 +1640,14 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 46px;
-      margin-top: 28px;
-      padding: 0 22px;
+      min-height: 44px;
+      margin-top: 26px;
+      padding: 0 20px;
       color: var(--white);
       background: var(--navy);
       border: 1px solid var(--navy);
       font: inherit;
-      font-size: .78rem;
+      font-size: .76rem;
       font-weight: 750;
       letter-spacing: .04em;
       text-transform: uppercase;
@@ -1640,91 +1657,6 @@
     .form-submit:hover {
       background: var(--navy-2);
     }
-    .contact-social {
-      background: var(--white);
-      border-top: 1px solid var(--soft-line);
-    }
-
-    .contact-social-inner {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      padding: 36px 0;
-    }
-
-    .social-icon-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 46px;
-      height: 46px;
-      color: var(--navy);
-      background: var(--white);
-      border: 1px solid var(--line);
-      text-decoration: none;
-      transition:
-        color .16s ease,
-        border-color .16s ease,
-        background .16s ease,
-        transform .16s ease;
-    }
-
-    .social-icon-link:hover,
-    .social-icon-link:focus-visible {
-      color: #765C20;
-      border-color: var(--gold);
-      background: var(--off-white);
-      transform: translateY(-1px);
-      outline: none;
-    }
-
-    .social-icon-link svg {
-      width: 21px;
-      height: 21px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 1.7;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .social-icon-link svg .fill-dot {
-      fill: currentColor;
-      stroke: none;
-    }
-
-
-
-    .contact-company-note {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .contact-company-note-inner {
-      display: grid;
-      grid-template-columns: .7fr 1.3fr;
-      gap: clamp(52px, 8vw, 116px);
-      padding: clamp(84px, 10vw, 132px) 0;
-    }
-
-    .contact-company-note-label {
-      margin: 0;
-      color: rgba(255,255,255,.42);
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .contact-company-note-copy {
-      max-width: 730px;
-      margin: 0;
-      color: rgba(255,255,255,.74);
-      font-size: clamp(1.35rem, 2.1vw, 1.8rem);
-      line-height: 1.55;
-      letter-spacing: -.02em;
-    }
 
     .dropdown a[aria-current="page"] {
       background: var(--off-white);
@@ -1733,25 +1665,24 @@
     }
 
     @media (max-width: 980px) {
-      .contact-main-grid,
-      .contact-company-note-inner {
+      .contact-page-inner {
         grid-template-columns: 1fr;
-        gap: 38px;
+        gap: 42px;
       }
 
-      .contact-context {
+      .contact-intro {
         position: static;
       }
     }
 
     @media (max-width: 680px) {
-      .contact-hero-inner {
-        padding-top: 82px;
-        padding-bottom: 70px;
+      .contact-page-inner {
+        padding-top: 64px;
+        padding-bottom: 76px;
       }
 
-      .contact-hero h1 {
-        font-size: clamp(2.7rem, 13vw, 4.05rem);
+      .contact-intro h1 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
       }
 
       .contact-form-head,
@@ -1773,6 +1704,7 @@
         border-top: 1px solid var(--line);
       }
     }
+
 
 
   </style>
@@ -2100,46 +2032,72 @@
 
 
   
+  
   <main>
 
-    <section class="contact-hero">
+    <section class="contact-page" aria-labelledby="contact-title">
       <div class="shell">
-        <div class="contact-hero-inner">
-          <p class="contact-eyebrow">Contact Ijeoma Intelligence</p>
-          <h1>Let us know how we can help.</h1>
-          <p>
-            Speak with Ijeoma Intelligence about enterprise requirements, institutional engagement,
-            partnerships, media enquiries or general company matters.
-          </p>
-        </div>
-      </div>
-    </section>
+        <div class="contact-page-inner">
 
-    <section class="contact-main" aria-labelledby="contact-form-title">
-      <div class="shell">
-        <div class="contact-main-grid">
-
-          <aside class="contact-context">
-            <p class="contact-kicker">Start a conversation</p>
-            <h2 id="contact-form-title">Tell us what you need.</h2>
+          <div class="contact-intro">
+            <p class="contact-eyebrow">Contact us</p>
+            <h1 id="contact-title">How can we help?</h1>
             <p>
-              Select the reason for your enquiry and provide enough context for it to reach the right person.
-              We respond to legitimate company enquiries as promptly as possible.
+              Contact Ijeoma Intelligence about enterprise requirements, institutional engagement,
+              partnerships, media enquiries or general company matters.
             </p>
 
-            <div class="contact-context-rule">
-              <strong>Institutional &amp; enterprise enquiries</strong>
-              <span>
-                Include your organisation, role and the operating requirement or opportunity you would like to discuss.
-              </span>
+            <div class="contact-direct">
+              <p class="contact-direct-label">Direct contact</p>
+              <p>
+                For formal or time-sensitive correspondence, email Ijeoma Intelligence directly.
+                You can also find us on our official company channels.
+              </p>
+
+              <div class="contact-social-inline" aria-label="Official contact channels">
+
+                <!-- Replace placeholder href values with official company links. -->
+                <a class="social-icon-link" href="#" aria-label="Email Ijeoma Intelligence">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 5.5h18v13H3z"></path>
+                    <path d="m4 7 8 6 8-6"></path>
+                  </svg>
+                </a>
+
+                <a class="social-icon-link" href="#" rel="noopener" aria-label="Ijeoma Intelligence on LinkedIn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3.5" y="3.5" width="17" height="17"></rect>
+                    <path d="M7.3 10v7"></path>
+                    <circle cx="7.3" cy="7.2" r=".9"></circle>
+                    <path d="M11.2 17v-7"></path>
+                    <path d="M11.2 13.1c.8-2.2 5.5-2.4 5.5 1V17"></path>
+                  </svg>
+                </a>
+
+                <a class="social-icon-link" href="#" rel="noopener" aria-label="Ijeoma Intelligence on Instagram">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3.5" y="3.5" width="17" height="17" rx="4"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="17.3" cy="6.8" r=".8" class="fill-dot"></circle>
+                  </svg>
+                </a>
+
+                <a class="social-icon-link" href="#" rel="noopener" aria-label="Ijeoma Intelligence on Facebook">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8.5"></circle>
+                    <path d="M13.4 8.6h2.1V5.8h-2.1c-2.7 0-4.1 1.6-4.1 4.2v1.6H7v2.8h2.3v5h3.1v-5H15l.5-2.8h-3.1v-1.2c0-1.2.4-1.8 1-1.8Z"></path>
+                  </svg>
+                </a>
+
+              </div>
             </div>
-          </aside>
+          </div>
 
           <div class="contact-form-shell">
             <div class="contact-form-head">
-              <h2>Contact Ijeoma Intelligence</h2>
+              <h2>Send an enquiry</h2>
               <p>
-                Complete the form below. Fields marked with an asterisk are required.
+                Select the reason for your enquiry and provide enough context for it to reach the right person.
               </p>
             </div>
 
@@ -2234,59 +2192,8 @@
       </div>
     </section>
 
-    <section class="contact-social" aria-label="Official contact channels">
-      <div class="shell">
-        <div class="contact-social-inner">
-
-          <!-- Replace placeholder href values with official company links. -->
-          <a class="social-icon-link" href="#" aria-label="Email Ijeoma Intelligence">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M3 5.5h18v13H3z"></path>
-              <path d="m4 7 8 6 8-6"></path>
-            </svg>
-          </a>
-
-          <a class="social-icon-link" href="#" rel="noopener" aria-label="Ijeoma Intelligence on LinkedIn">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3.5" y="3.5" width="17" height="17"></rect>
-              <path d="M7.3 10v7"></path>
-              <circle cx="7.3" cy="7.2" r=".9"></circle>
-              <path d="M11.2 17v-7"></path>
-              <path d="M11.2 13.1c.8-2.2 5.5-2.4 5.5 1V17"></path>
-            </svg>
-          </a>
-
-          <a class="social-icon-link" href="#" rel="noopener" aria-label="Ijeoma Intelligence on Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <rect x="3.5" y="3.5" width="17" height="17" rx="4"></rect>
-              <circle cx="12" cy="12" r="4"></circle>
-              <circle cx="17.3" cy="6.8" r=".8" class="fill-dot"></circle>
-            </svg>
-          </a>
-
-          <a class="social-icon-link" href="#" rel="noopener" aria-label="Ijeoma Intelligence on Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="8.5"></circle>
-              <path d="M13.4 8.6h2.1V5.8h-2.1c-2.7 0-4.1 1.6-4.1 4.2v1.6H7v2.8h2.3v5h3.1v-5H15l.5-2.8h-3.1v-1.2c0-1.2.4-1.8 1-1.8Z"></path>
-            </svg>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-company-note">
-      <div class="shell">
-        <div class="contact-company-note-inner">
-          <p class="contact-company-note-label">Ijeoma Intelligence</p>
-          <p class="contact-company-note-copy">
-            Safety intelligence for individuals and organisations operating across complex and changing risk environments.
-          </p>
-        </div>
-      </div>
-    </section>
-
   </main>
+
 
 
 
