@@ -1347,9 +1347,8 @@
       }
     }
 
-  
     /* =========================================================
-       CONTACT — COMPANY PAGE
+       CONTACT — ENTERPRISE CONTACT EXPERIENCE
     ========================================================= */
 
     .contact-hero {
@@ -1358,16 +1357,16 @@
     }
 
     .contact-hero-inner {
-      max-width: 1040px;
+      max-width: 960px;
       padding:
-        clamp(96px, 12vw, 164px)
+        clamp(92px, 11vw, 148px)
         0
-        clamp(82px, 9vw, 120px);
+        clamp(70px, 8vw, 104px);
     }
 
     .contact-eyebrow,
     .contact-kicker {
-      margin: 0 0 24px;
+      margin: 0 0 22px;
       color: var(--stone);
       font-size: .72rem;
       font-weight: 700;
@@ -1376,123 +1375,371 @@
     }
 
     .contact-hero h1 {
-      max-width: 900px;
+      max-width: 880px;
       margin: 0;
       color: var(--navy);
-      font-size: clamp(3rem, 5.8vw, 5.9rem);
+      font-size: clamp(3rem, 5.7vw, 5.8rem);
       line-height: .99;
       letter-spacing: -.052em;
       font-weight: 620;
     }
 
     .contact-hero p {
-      max-width: 720px;
-      margin: 34px 0 0;
+      max-width: 680px;
+      margin: 30px 0 0;
       color: #555C68;
-      font-size: clamp(1.02rem, 1.4vw, 1.2rem);
+      font-size: 1.04rem;
       line-height: 1.72;
     }
 
-    .contact-routes {
-      padding: clamp(88px, 10vw, 134px) 0;
+    .contact-main {
+      padding: clamp(78px, 9vw, 118px) 0;
       background: var(--off-white);
     }
 
-    .contact-routes-head {
+    .contact-main-grid {
       display: grid;
-      grid-template-columns: .72fr 1.28fr;
-      gap: clamp(52px, 8vw, 116px);
-      align-items: end;
-      margin-bottom: 50px;
+      grid-template-columns: minmax(260px, .7fr) minmax(0, 1.3fr);
+      gap: clamp(56px, 8vw, 118px);
+      align-items: start;
     }
 
-    .contact-routes-head h2 {
-      max-width: 470px;
+    .contact-context {
+      position: sticky;
+      top: 112px;
+    }
+
+    .contact-context h2 {
+      max-width: 430px;
       margin: 0;
       color: var(--navy);
-      font-size: clamp(2.4rem, 4.2vw, 4.45rem);
-      line-height: 1.02;
-      letter-spacing: -.045em;
+      font-size: clamp(2.1rem, 3.5vw, 3.7rem);
+      line-height: 1.03;
+      letter-spacing: -.042em;
       font-weight: 620;
     }
 
-    .contact-routes-head p {
-      max-width: 570px;
-      margin: 0;
-      color: #626977;
+    .contact-context p {
+      max-width: 420px;
+      margin: 24px 0 0;
+      color: #5B6270;
       font-size: .98rem;
       line-height: 1.72;
     }
 
-    .contact-list {
+    .contact-context-rule {
+      margin: 36px 0 0;
+      padding-top: 26px;
       border-top: 1px solid var(--line);
     }
 
-    .contact-row {
-      display: grid;
-      grid-template-columns: minmax(150px, .55fr) minmax(0, 1.05fr) auto;
-      gap: clamp(28px, 5vw, 76px);
-      align-items: center;
-      min-height: 118px;
-      padding: 26px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .contact-channel {
+    .contact-context-rule strong {
+      display: block;
+      margin-bottom: 9px;
       color: var(--navy);
-      font-size: 1rem;
-      font-weight: 750;
+      font-size: .77rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
     }
 
-    .contact-description {
-      max-width: 620px;
-      margin: 0;
-      color: #555C68;
-      font-size: .95rem;
+    .contact-context-rule span {
+      display: block;
+      max-width: 400px;
+      color: #6B7280;
+      font-size: .88rem;
       line-height: 1.6;
     }
 
-    .contact-link {
+    .contact-form-shell {
+      background: var(--white);
+      border: 1px solid var(--soft-line);
+      box-shadow: 0 22px 58px rgba(15,27,51,.06);
+    }
+
+    .contact-form-head {
+      padding: 32px 34px 28px;
+      border-bottom: 1px solid var(--soft-line);
+    }
+
+    .contact-form-head h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.45rem;
+      line-height: 1.2;
+      letter-spacing: -.025em;
+      font-weight: 650;
+    }
+
+    .contact-form-head p {
+      max-width: 610px;
+      margin: 10px 0 0;
+      color: #6A7180;
+      font-size: .9rem;
+      line-height: 1.6;
+    }
+
+    .contact-form {
+      padding: 32px 34px 36px;
+    }
+
+    .inquiry-group {
+      margin: 0 0 34px;
+      padding: 0;
+      border: 0;
+    }
+
+    .inquiry-group legend {
+      margin-bottom: 14px;
+      color: var(--navy);
+      font-size: .76rem;
+      font-weight: 750;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .inquiry-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      border: 1px solid var(--line);
+    }
+
+    .inquiry-option {
+      position: relative;
+      min-width: 0;
+    }
+
+    .inquiry-option:nth-child(odd) {
+      border-right: 1px solid var(--line);
+    }
+
+    .inquiry-option:nth-child(n+3) {
+      border-top: 1px solid var(--line);
+    }
+
+    .inquiry-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .inquiry-option label {
+      display: flex;
+      min-height: 72px;
+      align-items: center;
+      padding: 17px 18px;
+      color: var(--navy);
+      background: var(--white);
+      font-size: .88rem;
+      font-weight: 650;
+      line-height: 1.35;
+      cursor: pointer;
+      transition: background .18s ease, color .18s ease;
+    }
+
+    .inquiry-option input:checked + label {
+      color: var(--white);
+      background: var(--navy);
+    }
+
+    .inquiry-option input:focus-visible + label {
+      outline: 2px solid var(--gold);
+      outline-offset: -2px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px 24px;
+    }
+
+    .form-field {
+      min-width: 0;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      min-height: 48px;
+      padding: 12px 13px;
+      color: var(--ink);
+      background: var(--white);
+      border: 1px solid #CFCBC2;
+      border-radius: 0;
+      font: inherit;
+      font-size: .92rem;
+      outline: none;
+      transition: border-color .16s ease, box-shadow .16s ease;
+    }
+
+    .form-field textarea {
+      min-height: 144px;
+      resize: vertical;
+      line-height: 1.55;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 2px rgba(15,27,51,.08);
+    }
+
+    .form-consent {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 10px;
+      align-items: start;
+      margin-top: 22px;
+      color: #6A7180;
+      font-size: .76rem;
+      line-height: 1.55;
+    }
+
+    .form-consent input {
+      width: 15px;
+      height: 15px;
+      margin: 2px 0 0;
+      accent-color: var(--navy);
+    }
+
+    .form-consent a {
+      color: var(--navy);
+    }
+
+    .form-submit {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 28px;
+      padding: 0 22px;
+      color: var(--white);
+      background: var(--navy);
+      border: 1px solid var(--navy);
+      font: inherit;
+      font-size: .78rem;
+      font-weight: 750;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .form-submit:hover {
+      background: var(--navy-2);
+    }
+
+    .contact-secondary {
+      background: var(--white);
+      border-top: 1px solid var(--soft-line);
+    }
+
+    .contact-secondary-inner {
+      padding: clamp(78px, 9vw, 116px) 0;
+    }
+
+    .contact-secondary-head {
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      gap: clamp(52px, 8vw, 116px);
+      align-items: end;
+      margin-bottom: 44px;
+    }
+
+    .contact-secondary-head h2 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2.35rem, 4vw, 4.2rem);
+      line-height: 1.02;
+      letter-spacing: -.044em;
+      font-weight: 620;
+    }
+
+    .contact-secondary-head p {
+      max-width: 570px;
+      margin: 0;
+      color: #626977;
+      font-size: .96rem;
+      line-height: 1.7;
+    }
+
+    .contact-channel-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-channel-row {
+      display: grid;
+      grid-template-columns: minmax(150px, .55fr) minmax(0, 1.2fr) auto;
+      gap: clamp(28px, 5vw, 74px);
+      align-items: center;
+      min-height: 100px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-channel-name {
+      color: var(--navy);
+      font-size: .96rem;
+      font-weight: 750;
+    }
+
+    .contact-channel-copy {
+      margin: 0;
+      color: #626977;
+      font-size: .9rem;
+      line-height: 1.6;
+    }
+
+    .contact-channel-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       color: var(--navy);
       text-decoration: none;
-      font-size: .8rem;
+      font-size: .78rem;
       font-weight: 750;
-      white-space: nowrap;
-      border-bottom: 1px solid rgba(15,27,51,.28);
+      border-bottom: 1px solid rgba(15,27,51,.25);
       padding-bottom: 3px;
+      white-space: nowrap;
     }
 
-    .contact-link::after {
+    .contact-channel-link::after {
       content: "↗";
       color: var(--gold);
-      font-size: .95rem;
-      line-height: 1;
     }
 
-    .contact-link:hover,
-    .contact-link:focus-visible {
+    .contact-channel-link:hover,
+    .contact-channel-link:focus-visible {
       color: #765C20;
-      outline: none;
       border-bottom-color: var(--gold);
+      outline: none;
     }
 
-    .contact-note {
+    .contact-company-note {
       background: var(--navy);
       color: var(--white);
     }
 
-    .contact-note-inner {
+    .contact-company-note-inner {
       display: grid;
-      grid-template-columns: .72fr 1.28fr;
+      grid-template-columns: .7fr 1.3fr;
       gap: clamp(52px, 8vw, 116px);
-      padding: clamp(92px, 11vw, 144px) 0;
-      align-items: start;
+      padding: clamp(84px, 10vw, 132px) 0;
     }
 
-    .contact-note-label {
+    .contact-company-note-label {
       margin: 0;
       color: rgba(255,255,255,.42);
       font-size: .72rem;
@@ -1501,22 +1748,13 @@
       text-transform: uppercase;
     }
 
-    .contact-note-copy h2 {
-      max-width: 720px;
+    .contact-company-note-copy {
+      max-width: 730px;
       margin: 0;
-      color: var(--white);
-      font-size: clamp(2.45rem, 4.4vw, 4.65rem);
-      line-height: 1.01;
-      letter-spacing: -.045em;
-      font-weight: 620;
-    }
-
-    .contact-note-copy p {
-      max-width: 700px;
-      margin: 28px 0 0;
-      color: rgba(255,255,255,.67);
-      font-size: 1rem;
-      line-height: 1.76;
+      color: rgba(255,255,255,.74);
+      font-size: clamp(1.35rem, 2.1vw, 1.8rem);
+      line-height: 1.55;
+      letter-spacing: -.02em;
     }
 
     .dropdown a[aria-current="page"] {
@@ -1526,40 +1764,65 @@
     }
 
     @media (max-width: 980px) {
-      .contact-routes-head,
-      .contact-note-inner {
+      .contact-main-grid,
+      .contact-secondary-head,
+      .contact-company-note-inner {
         grid-template-columns: 1fr;
         gap: 38px;
       }
 
-      .contact-row {
-        grid-template-columns: 150px 1fr auto;
-        gap: 26px;
+      .contact-context {
+        position: static;
+      }
+
+      .contact-channel-row {
+        grid-template-columns: 130px 1fr auto;
+        gap: 24px;
       }
     }
 
     @media (max-width: 680px) {
       .contact-hero-inner {
         padding-top: 82px;
-        padding-bottom: 74px;
+        padding-bottom: 70px;
       }
 
       .contact-hero h1 {
-        font-size: clamp(2.7rem, 13vw, 4.1rem);
+        font-size: clamp(2.7rem, 13vw, 4.05rem);
       }
 
-      .contact-row {
+      .contact-form-head,
+      .contact-form {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .inquiry-options,
+      .form-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
-        min-height: 0;
-        padding: 26px 0 30px;
       }
 
-      .contact-link {
+      .inquiry-option:nth-child(odd) {
+        border-right: 0;
+      }
+
+      .inquiry-option:nth-child(n+2) {
+        border-top: 1px solid var(--line);
+      }
+
+      .contact-channel-row {
+        grid-template-columns: 1fr;
+        gap: 9px;
+        min-height: 0;
+        padding: 24px 0 28px;
+      }
+
+      .contact-channel-link {
         justify-self: start;
-        margin-top: 6px;
+        margin-top: 4px;
       }
     }
+
 
   </style>
 </head>
@@ -1885,94 +2148,204 @@
   </header>
 
 
+  
   <main>
 
     <section class="contact-hero">
       <div class="shell">
         <div class="contact-hero-inner">
           <p class="contact-eyebrow">Contact Ijeoma Intelligence</p>
-          <h1>Talk to us directly.</h1>
+          <h1>Let us know how we can help.</h1>
           <p>
-            For company enquiries, partnerships, institutional engagement, media or general correspondence,
-            use the channel that is most useful to you.
+            Speak with Ijeoma Intelligence about enterprise requirements, institutional engagement,
+            partnerships, media enquiries or general company matters.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="contact-routes" aria-labelledby="contact-routes-title">
+    <section class="contact-main" aria-labelledby="contact-form-title">
       <div class="shell">
+        <div class="contact-main-grid">
 
-        <div class="contact-routes-head">
-          <div>
-            <p class="contact-kicker">Get in touch</p>
-            <h2 id="contact-routes-title">Direct channels to Ijeoma Intelligence.</h2>
-          </div>
-          <p>
-            We maintain a small number of official company channels so that enquiries reach the right place
-            without unnecessary layers.
-          </p>
-        </div>
-
-        <div class="contact-list">
-
-          <div class="contact-row">
-            <div class="contact-channel">Email</div>
-            <p class="contact-description">
-              General enquiries, introductions, partnerships and formal correspondence.
-            </p>
-            <!-- Replace # with the official Ijeoma Intelligence email link. -->
-            <a class="contact-link" href="#">Email us</a>
-          </div>
-
-          <div class="contact-row">
-            <div class="contact-channel">LinkedIn</div>
-            <p class="contact-description">
-              Company updates, institutional activity and professional contact.
-            </p>
-            <!-- Replace # with the official LinkedIn company URL. -->
-            <a class="contact-link" href="#" rel="noopener">LinkedIn</a>
-          </div>
-
-          <div class="contact-row">
-            <div class="contact-channel">Instagram</div>
-            <p class="contact-description">
-              Product, field and company updates from Ijeoma.
-            </p>
-            <!-- Replace # with the official Instagram URL. -->
-            <a class="contact-link" href="#" rel="noopener">Instagram</a>
-          </div>
-
-          <div class="contact-row">
-            <div class="contact-channel">Facebook</div>
-            <p class="contact-description">
-              Public updates and community-facing information.
-            </p>
-            <!-- Replace # with the official Facebook URL. -->
-            <a class="contact-link" href="#" rel="noopener">Facebook</a>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <section class="contact-note" aria-labelledby="organisations-title">
-      <div class="shell">
-        <div class="contact-note-inner">
-          <p class="contact-note-label">Organisations &amp; institutions</p>
-          <div class="contact-note-copy">
-            <h2 id="organisations-title">Contacting us about a partnership or operational requirement?</h2>
+          <aside class="contact-context">
+            <p class="contact-kicker">Start a conversation</p>
+            <h2 id="contact-form-title">Tell us what you need.</h2>
             <p>
-              Include your organisation, your role, and the nature of the conversation you would like to have.
-              This helps us direct institutional, enterprise and partnership enquiries appropriately from the start.
+              Select the reason for your enquiry and provide enough context for it to reach the right person.
+              We respond to legitimate company enquiries as promptly as possible.
+            </p>
+
+            <div class="contact-context-rule">
+              <strong>Institutional &amp; enterprise enquiries</strong>
+              <span>
+                Include your organisation, role and the operating requirement or opportunity you would like to discuss.
+              </span>
+            </div>
+          </aside>
+
+          <div class="contact-form-shell">
+            <div class="contact-form-head">
+              <h2>Contact Ijeoma Intelligence</h2>
+              <p>
+                Complete the form below. Fields marked with an asterisk are required.
+              </p>
+            </div>
+
+            <!--
+              FORM HANDLER:
+              Replace action="#" with the approved production form endpoint
+              before public launch.
+            -->
+            <form class="contact-form" action="#" method="post">
+
+              <fieldset class="inquiry-group">
+                <legend>What can we help with?</legend>
+
+                <div class="inquiry-options">
+                  <div class="inquiry-option">
+                    <input type="radio" name="enquiry_type" id="enterprise" value="Enterprise & Institutional" checked>
+                    <label for="enterprise">Enterprise &amp; Institutional</label>
+                  </div>
+
+                  <div class="inquiry-option">
+                    <input type="radio" name="enquiry_type" id="partnerships" value="Partnerships">
+                    <label for="partnerships">Partnerships</label>
+                  </div>
+
+                  <div class="inquiry-option">
+                    <input type="radio" name="enquiry_type" id="media" value="Media & Research">
+                    <label for="media">Media &amp; Research</label>
+                  </div>
+
+                  <div class="inquiry-option">
+                    <input type="radio" name="enquiry_type" id="general" value="General Enquiry">
+                    <label for="general">General Enquiry</label>
+                  </div>
+                </div>
+              </fieldset>
+
+              <div class="form-grid">
+                <div class="form-field">
+                  <label for="first-name">First name *</label>
+                  <input id="first-name" name="first_name" type="text" autocomplete="given-name" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="last-name">Last name *</label>
+                  <input id="last-name" name="last_name" type="text" autocomplete="family-name" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="email">Work email *</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required>
+                </div>
+
+                <div class="form-field">
+                  <label for="organisation">Organisation</label>
+                  <input id="organisation" name="organisation" type="text" autocomplete="organization">
+                </div>
+
+                <div class="form-field">
+                  <label for="role">Role / title</label>
+                  <input id="role" name="role" type="text" autocomplete="organization-title">
+                </div>
+
+                <div class="form-field">
+                  <label for="country">Country</label>
+                  <input id="country" name="country" type="text" autocomplete="country-name">
+                </div>
+
+                <div class="form-field full">
+                  <label for="details">How can we help? *</label>
+                  <textarea
+                    id="details"
+                    name="details"
+                    required
+                    placeholder="Tell us briefly about your enquiry, requirement or proposed conversation."
+                  ></textarea>
+                </div>
+              </div>
+
+              <label class="form-consent">
+                <input type="checkbox" name="privacy_acknowledgement" required>
+                <span>
+                  I understand that Ijeoma Intelligence will process the information I provide in order to respond
+                  to this enquiry, in accordance with its <a href="privacy.html">Privacy Policy</a>.
+                </span>
+              </label>
+
+              <button class="form-submit" type="submit">Submit enquiry</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-secondary" aria-labelledby="other-contact-title">
+      <div class="shell">
+        <div class="contact-secondary-inner">
+
+          <div class="contact-secondary-head">
+            <div>
+              <p class="contact-kicker">Other ways to get in touch</p>
+              <h2 id="other-contact-title">Official company channels.</h2>
+            </div>
+            <p>
+              Follow Ijeoma Intelligence or contact us through our official company accounts.
             </p>
           </div>
+
+          <div class="contact-channel-list">
+
+            <div class="contact-channel-row">
+              <div class="contact-channel-name">Email</div>
+              <p class="contact-channel-copy">General company correspondence and formal enquiries.</p>
+              <!-- Replace # with the official mailto: link. -->
+              <a class="contact-channel-link" href="#">Email</a>
+            </div>
+
+            <div class="contact-channel-row">
+              <div class="contact-channel-name">LinkedIn</div>
+              <p class="contact-channel-copy">Company, institutional and professional updates.</p>
+              <!-- Replace # with official company URL. -->
+              <a class="contact-channel-link" href="#" rel="noopener">LinkedIn</a>
+            </div>
+
+            <div class="contact-channel-row">
+              <div class="contact-channel-name">Instagram</div>
+              <p class="contact-channel-copy">Product and company updates.</p>
+              <!-- Replace # with official company URL. -->
+              <a class="contact-channel-link" href="#" rel="noopener">Instagram</a>
+            </div>
+
+            <div class="contact-channel-row">
+              <div class="contact-channel-name">Facebook</div>
+              <p class="contact-channel-copy">Public company and community-facing updates.</p>
+              <!-- Replace # with official company URL. -->
+              <a class="contact-channel-link" href="#" rel="noopener">Facebook</a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-company-note">
+      <div class="shell">
+        <div class="contact-company-note-inner">
+          <p class="contact-company-note-label">Ijeoma Intelligence</p>
+          <p class="contact-company-note-copy">
+            Safety intelligence for individuals and organisations operating across complex and changing risk environments.
+          </p>
         </div>
       </div>
     </section>
 
   </main>
+
 
 
 <footer class="site-footer">
@@ -2039,7 +2412,7 @@
 
           <div class="footer-links">
 
-            <a href="contact.html">
+            <a href="contact.html" aria-current="page">
               Contact
             </a>
 
